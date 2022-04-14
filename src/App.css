@@ -9,8 +9,39 @@
   height: 600px;
   background-size: 400% 400%;
   transform: skew(0, -4deg);
+}
+
+.sec2{
+  background: #f2f4f8;
+}
+
+.card-c{
+  width: 220px;
+  background: #fff;
+  border-top-right-radius: 10px;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+.card-c:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid;
+  border-radius: 50%;
+  text-align: center;
 }
 
 @keyframes animate {
