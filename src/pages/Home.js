@@ -45,7 +45,7 @@ const Home = () => {
 
   const navBar = () => (
     <div className="position-relative vh-100">
-      <img src={svg1} alt={"logo"} style={{ zIndex: -1 }} />
+      <img src={svg1} alt={"logo"} style={{ zIndex: -1 }} className="position-absolute top-0 start-0" />
       <img
         src={svg2}
         alt={"logo"}
@@ -58,7 +58,7 @@ const Home = () => {
         className="fixed-top py-3 px-4"
         style={{
           fontFamily: "Roboto,sans-serif",
-          zIndex: 2,
+          zIndex: 10,
           transition: "1s ease",
           backgroundColor: navBackground ? "white" : "transparent",
         }}
@@ -89,12 +89,12 @@ const Home = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      <div className="d-flex flex-column justify-content-center align-items-center text-center mx-5 py-0">
-        <p style={{ fontSize: "80px", fontWeight: "900"}}> Get Hired Faster </p>
+      <div className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0" style={{ height:"100%"}}>
+        <p className="fs-1 fw-bold"> Get Hired Faster </p>
 
-        <p style={{ fontSize: "45px", fontWeight: "700"}}>
+        <p className="fs-3">
           {" "}
-          With <span className="text-primary">Insider Access</span> to Hiring
+          With <span className="text-primary fw-bold">Insider Access</span> to Hiring
           Manager
         </p>
 
