@@ -25,6 +25,7 @@ import HandshakeIcon from "@mui/icons-material/Handshake";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import PaidIcon from "@mui/icons-material/Paid";
 import CastForEducationIcon from "@mui/icons-material/CastForEducation";
+import { styled, createTheme } from '@mui/material/styles';
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
@@ -43,6 +44,29 @@ const Home = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const hasWindow = typeof window !== 'undefined';
+
+  const [winDim, detectHW] = useState({
+    winWidth: hasWindow ? window.innerWidth : null,
+    winHeight: hasWindow ? window.innerHeight : null
+  });
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight
+    })
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', detectSize)
+
+    return () => {
+      window.removeEventListener('resize', detectSize)
+    };
+  }, [winDim]);
+  console.log(winDim);
 
   const navBar = () => (
     <div className="position-relative vh-100">
@@ -106,33 +130,6 @@ const Home = () => {
           With <span className="text-primary fw-bold">Insider Access</span> to
           Hiring Manager
         </p>
-
-        {/* <Card
-          className="position-relative"
-          style={{
-            width: "70%",
-            background: "transparent",
-            boxShadow: "0 14px 26px rgba(0,0,0,0.04)",
-            border: "none"
-          }}
-        >
-          <Card.Body>
-            <TextField
-              id="outlined-basic"
-              label="Search for Jobs"
-              variant="outlined"
-              className="mx-3 my-3"
-              style={{ width: "50%" }}
-            />
-            <Button
-              variant="contained"
-              className="mx-3 my-3"
-              style={{ fontSize: "1rem", padding: "13px 23px" }}
-            >
-              Search
-            </Button>
-          </Card.Body>
-        </Card> */}
 
         <div div className="d-flex flex-row flex-wrap justify-content-center">
           <TextField
@@ -287,8 +284,35 @@ const Home = () => {
     </div>
   );
 
+
+  const Skewd = styled('div')(({ theme }) => ({
+    padding: theme.spacing(1),
+    [theme.breakpoints.down('lg')]: {
+      height: "1200px"
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: "600px"
+    },
+  }));
+  const theme2 = createTheme({
+    breakpoints: {
+      values: {
+        break: 1048
+      },
+    },
+  });
+  const Flexed = styled('div')(({ theme2 }) => ({
+    padding: theme2.spacing(1),
+    [theme2.breakpoints.down('break')]: {
+      flexDirection: 'row-reverse'
+    },
+    [theme2.breakpoints.up('break')]: {
+      flexDirection: 'row'
+    },
+  }));
+
   const sec3 = () => (
-    <div className="position-relative skewx">
+    <Skewd className="position-relative skewx">
       <div class="bubbles">
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -301,7 +325,7 @@ const Home = () => {
         <div class="bubble"></div>
         <div class="bubble"></div>
       </div>
-      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap mt-5 bubbles">
+      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap-reverse mt-5 bubbles">
         <div className="mx-auto my-auto px-5">
           <img
             src={draw1}
@@ -368,7 +392,7 @@ const Home = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </Skewd>
   );
 
   const sec4=()=>(
