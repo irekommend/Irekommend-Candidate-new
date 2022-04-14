@@ -89,22 +89,23 @@ const Home = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      <div className="d-flex flex-column justify-content-center align-items-center text-center mx-5 my-0 py-0">
-        <p className="fs-1 fw-bold"> Get Hired Faster </p>
+      <div className="d-flex flex-column justify-content-center align-items-center text-center mx-5 py-0">
+        <p style={{ fontSize: "80px", fontWeight: "900"}}> Get Hired Faster </p>
 
-        <p className="fs-2">
+        <p style={{ fontSize: "45px", fontWeight: "700"}}>
           {" "}
           With <span className="text-primary">Insider Access</span> to Hiring
           Manager
         </p>
 
-        <Card
+        <Card className="position-relative"
           style={{
             width: "fit-content",
             background: "transparent",
             boxShadow: "0 14px 26px rgba(0,0,0,0.04)",
           }}
         >
+          <Card.Title className="pt-3 mb-0"> Search for Jobs </Card.Title>
           <Card.Body>
             <TextField
               id="outlined-basic"
