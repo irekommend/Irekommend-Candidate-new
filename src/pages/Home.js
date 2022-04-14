@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import draw from "../img/draw.svg";
+import draw1 from "../img/draw1.svg";
 import {
   Navbar,
   Container,
@@ -45,11 +46,16 @@ const Home = () => {
 
   const navBar = () => (
     <div className="position-relative vh-100">
-      <img src={svg1} alt={"logo"} style={{ zIndex: -1 }} className="position-absolute top-0 start-0" />
+      <img
+        src={svg1}
+        alt={"logo"}
+        style={{ zIndex: -1 }}
+        className="position-absolute top-0 start-0"
+      />
       <img
         src={svg2}
         alt={"logo"}
-        style={{ zIndex: -2 }}
+        style={{ zIndex: -3 }}
         className="position-absolute bottom-0 end-0"
       />
       <Navbar
@@ -89,30 +95,34 @@ const Home = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      <div className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0" style={{ height:"100%"}}>
+      <div
+        className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
+        style={{ height: "100%" }}
+      >
         <p className="fs-1 fw-bold"> Get Hired Faster </p>
 
         <p className="fs-3">
           {" "}
-          With <span className="text-primary fw-bold">Insider Access</span> to Hiring
-          Manager
+          With <span className="text-primary fw-bold">Insider Access</span> to
+          Hiring Manager
         </p>
 
-        <Card className="position-relative"
+        {/* <Card
+          className="position-relative"
           style={{
-            width: "fit-content",
+            width: "70%",
             background: "transparent",
             boxShadow: "0 14px 26px rgba(0,0,0,0.04)",
+            border: "none"
           }}
         >
-          <Card.Title className="pt-3 mb-0"> Search for Jobs </Card.Title>
           <Card.Body>
             <TextField
               id="outlined-basic"
-              label="Outlined"
+              label="Search for Jobs"
               variant="outlined"
               className="mx-3 my-3"
-              style={{ width: "max-content" }}
+              style={{ width: "50%" }}
             />
             <Button
               variant="contained"
@@ -122,7 +132,53 @@ const Home = () => {
               Search
             </Button>
           </Card.Body>
-        </Card>
+        </Card> */}
+
+        <div div className="d-flex flex-row flex-wrap justify-content-center">
+          <TextField
+            id="outlined-basic"
+            label="Search for Jobs"
+            variant="outlined"
+            className="mx-3 my-3"
+            style={{ width: "70vw" }}
+          />
+          <Button
+            variant="contained"
+            className="mx-3 my-3"
+            style={{ fontSize: "1rem", padding: "13px 23px" }}
+          >
+            Search
+          </Button>
+        </div>
+
+        <div className="d-flex flex-row flex-wrap mx-5 pt-5">
+          <Button variant="outlined" className="mx-2 my-2">
+            Outlined
+          </Button>
+          <Button variant="outlined" className="mx-2 my-2">
+            Outlined
+          </Button>
+
+          <Button variant="outlined" className="mx-2 my-2">
+            Outlined
+          </Button>
+
+          <Button variant="outlined" className="mx-2 my-2">
+            Outlined
+          </Button>
+
+          <Button variant="outlined" className="mx-2 my-2">
+            Outlined
+          </Button>
+
+          <Button variant="outlined" className="mx-2 my-2">
+            Outlined
+          </Button>
+
+          <Button variant="outlined" className="mx-2 my-2">
+            Outlined
+          </Button>
+        </div>
       </div>
     </div>
   );
@@ -208,9 +264,9 @@ const Home = () => {
 
   const sec2 = () => (
     <div className="position-relative ">
-      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap mt-5">
+      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap ">
         <div className="mx-auto my-auto text-center">
-          <p className="fs-3 fw-bold">Let Us Work For You</p>
+          <p className="fs-3 fw-bold mt-5">Let Us Work For You</p>
           <p className="fs-5">
             Take back your precious time with IRekommend <br /> by saving an
             average of 18 minutes <br />
@@ -245,12 +301,85 @@ const Home = () => {
         <div class="bubble"></div>
         <div class="bubble"></div>
       </div>
+      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap mt-5 bubbles">
+        <div className="mx-auto my-auto px-5">
+          <img
+            src={draw1}
+            alt={"logo"}
+            style={{ zIndex: -1, width: "100%", maxHeight: "500px" }}
+            className=" my-5 py-5"
+          />
+        </div>
+
+        <div className="mx-auto my-auto text-center">
+          <Card style={{ width: "25rem" }} className="mx-3 my-3 card-c">
+            <Card.Body>
+              <div
+                className="d-flex justify-content-center icon mb-3"
+                style={{ borderColor: orange[400] }}
+              >
+                <HandshakeIcon
+                  className="align-self-center"
+                  style={{ color: orange[400] }}
+                />
+              </div>
+              <Card.Title>We are your Concierge</Card.Title>
+              <Card.Text style={{ textAlign: "justify" }}>
+                Your Candidate Agent will make direct introduction to hiring
+                managers.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card style={{ width: "25rem" }} className="mx-3 my-3 card-c">
+            <Card.Body>
+              <div
+                className="d-flex justify-content-center icon mb-3"
+                style={{ borderColor: orange[400] }}
+              >
+                <HandshakeIcon
+                  className="align-self-center"
+                  style={{ color: orange[400] }}
+                />
+              </div>
+              <Card.Title>We are your Concierge</Card.Title>
+              <Card.Text style={{ textAlign: "justify" }}>
+                Your Candidate Agent will make direct introduction to hiring
+                managers.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card style={{ width: "25rem" }} className="mx-3 my-3 card-c">
+            <Card.Body>
+              <div
+                className="d-flex justify-content-center icon mb-3"
+                style={{ borderColor: orange[400] }}
+              >
+                <HandshakeIcon
+                  className="align-self-center"
+                  style={{ color: orange[400] }}
+                />
+              </div>
+              <Card.Title>We are your Concierge</Card.Title>
+              <Card.Text style={{ textAlign: "justify" }}>
+                Your Candidate Agent will make direct introduction to hiring
+                managers.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </div>
     </div>
+  );
+
+  const sec4=()=>(
+<div style={{height:"100vh"}}>
+
+</div>
   );
 
   return (
     <div className="home">
-      {navBar()} {cardx()} {sec2()} {sec3()}
+      {navBar()} {cardx()} {sec2()} {sec3()} 
     </div>
   );
 };
