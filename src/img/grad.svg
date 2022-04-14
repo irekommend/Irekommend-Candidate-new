@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="visual" version="1.1" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient1041" x1="39.671" x2="916.36" y1="512" y2="59.741" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f60" offset="0"/>
+   <stop stop-color="#f95" offset="1"/>
+  </linearGradient>
+ </defs>
+ <rect width="960" height="540" fill="url(#linearGradient1041)"/>
+</svg>
