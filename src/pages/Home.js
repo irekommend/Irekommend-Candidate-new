@@ -18,32 +18,30 @@ import {
   ListGroup,
 } from "react-bootstrap";
 import Button from "@mui/material/Button";
-import {red, blue, green, orange} from "@mui/material/colors";
+import { red, blue, green, orange } from "@mui/material/colors";
 import MenuIcon from "@mui/icons-material/Menu";
-import HandshakeIcon from '@mui/icons-material/Handshake';
-import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
-import PaidIcon from '@mui/icons-material/Paid';
-import CastForEducationIcon from '@mui/icons-material/CastForEducation';
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import PaidIcon from "@mui/icons-material/Paid";
+import CastForEducationIcon from "@mui/icons-material/CastForEducation";
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
-
-  const [navBackground, setNavBackground] = useState(false)
-    const navRef = useRef()
-    navRef.current = navBackground
-    useEffect(() => {
-      const handleScroll = () => {
-        const show = window.scrollY > 50
-        if (navRef.current !== show) {
-          setNavBackground(show)
-        }
+  const [navBackground, setNavBackground] = useState(false);
+  const navRef = useRef();
+  navRef.current = navBackground;
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 50;
+      if (navRef.current !== show) {
+        setNavBackground(show);
       }
-      document.addEventListener('scroll', handleScroll)
-      return () => {
-        document.removeEventListener('scroll', handleScroll)
-      }
-    },
-  []);
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navBar = () => (
     <div className="position-relative vh-100">
@@ -58,10 +56,14 @@ const Home = () => {
         collapseOnSelect
         expand="sm"
         className="fixed-top py-3 px-4"
-        style={{ fontFamily: "Roboto,sans-serif", zIndex: 2, transition: '1s ease', backgroundColor: navBackground ? 'white' : 'transparent' }}
+        style={{
+          fontFamily: "Roboto,sans-serif",
+          zIndex: 2,
+          transition: "1s ease",
+          backgroundColor: navBackground ? "white" : "transparent",
+        }}
         scrolling
       >
-        
         <Navbar.Brand href="#home">
           <h3>IRekommend</h3>
         </Navbar.Brand>
@@ -96,7 +98,13 @@ const Home = () => {
           Manager
         </p>
 
-        <Card style={{ width: "fit-content", background: "transparent", boxShadow: "0 14px 26px rgba(0,0,0,0.04)" }}>
+        <Card
+          style={{
+            width: "fit-content",
+            background: "transparent",
+            boxShadow: "0 14px 26px rgba(0,0,0,0.04)",
+          }}
+        >
           <Card.Body>
             <TextField
               id="outlined-basic"
@@ -105,13 +113,16 @@ const Home = () => {
               className="mx-3 my-3"
               style={{ width: "max-content" }}
             />
-            <Button variant="contained" className="mx-3 my-3" style={{ fontSize: "1rem", padding: "13px 23px" }}>
+            <Button
+              variant="contained"
+              className="mx-3 my-3"
+              style={{ fontSize: "1rem", padding: "13px 23px" }}
+            >
               Search
             </Button>
           </Card.Body>
         </Card>
       </div>
-
     </div>
   );
 
@@ -120,37 +131,73 @@ const Home = () => {
       <div className="d-flex justify-content-evenly align-items-stretch flex-wrap mx-5 py-3">
         <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
           <Card.Body>
-            <div className="d-flex justify-content-center icon mb-3" style={{ borderColor: orange[400]}}><HandshakeIcon className="align-self-center"  style={{ color: orange[400]}} /></div>
+            <div
+              className="d-flex justify-content-center icon mb-3"
+              style={{ borderColor: orange[400] }}
+            >
+              <HandshakeIcon
+                className="align-self-center"
+                style={{ color: orange[400] }}
+              />
+            </div>
             <Card.Title>We are your Concierge</Card.Title>
-            <Card.Text style={{ textAlign: "justify"}}>
-              Your Candidate Agent will make direct introduction to hiring managers.
+            <Card.Text style={{ textAlign: "justify" }}>
+              Your Candidate Agent will make direct introduction to hiring
+              managers.
             </Card.Text>
           </Card.Body>
         </Card>
         <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
           <Card.Body>
-            <div className="d-flex justify-content-center icon mb-3" style={{ borderColor: green[400]}}><WorkHistoryIcon className="align-self-center"  style={{ color: green[400]}} /></div>
+            <div
+              className="d-flex justify-content-center icon mb-3"
+              style={{ borderColor: green[400] }}
+            >
+              <WorkHistoryIcon
+                className="align-self-center"
+                style={{ color: green[400] }}
+              />
+            </div>
             <Card.Title>Curated Job Openings</Card.Title>
-            <Card.Text style={{ textAlign: "justify"}}>
-              We curate jobs across various boards and 100s of companies and our AI shortlists jobs based on your profile and sends to your inbox.
+            <Card.Text style={{ textAlign: "justify" }}>
+              We curate jobs across various boards and 100s of companies and our
+              AI shortlists jobs based on your profile and sends to your inbox.
             </Card.Text>
           </Card.Body>
         </Card>
         <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
           <Card.Body>
-          <div className="d-flex justify-content-center icon mb-3" style={{ borderColor: blue[400]}}><PaidIcon className="align-self-center"  style={{ color: blue[400]}} /></div>
+            <div
+              className="d-flex justify-content-center icon mb-3"
+              style={{ borderColor: blue[400] }}
+            >
+              <PaidIcon
+                className="align-self-center"
+                style={{ color: blue[400] }}
+              />
+            </div>
             <Card.Title>Maximize your Earning</Card.Title>
-            <Card.Text style={{ textAlign: "justify"}}>
-              Job Search is lonely. We represent candidate and believe in maximizing candidate earning potential and we do it for free.
+            <Card.Text style={{ textAlign: "justify" }}>
+              Job Search is lonely. We represent candidate and believe in
+              maximizing candidate earning potential and we do it for free.
             </Card.Text>
           </Card.Body>
         </Card>
         <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
           <Card.Body>
-          <div className="d-flex justify-content-center icon mb-3" style={{ borderColor: red[400]}}><CastForEducationIcon className="align-self-center" style={{ color: red[400]}} /></div>
+            <div
+              className="d-flex justify-content-center icon mb-3"
+              style={{ borderColor: red[400] }}
+            >
+              <CastForEducationIcon
+                className="align-self-center"
+                style={{ color: red[400] }}
+              />
+            </div>
             <Card.Title>Ace your Interviews</Card.Title>
-            <Card.Text style={{ textAlign: "justify"}}>
-              Mock interviews, interview preparation, compensation - we do it all for you!
+            <Card.Text style={{ textAlign: "justify" }}>
+              Mock interviews, interview preparation, compensation - we do it
+              all for you!
             </Card.Text>
           </Card.Body>
         </Card>
@@ -160,32 +207,51 @@ const Home = () => {
 
   const sec2 = () => (
     <div className="position-relative ">
-      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap mt-5"> 
+      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap mt-5">
         <div className="mx-auto my-auto text-center">
-            <p className="fs-3 fw-bold">
-            Let Us Work For You
-            </p>
-            <p className="fs-5">
-            Take back your precious time with IRekommend <br/> by saving an average of 18 minutes <br/>per job application and doing<br/> what you want instead.
-            </p>
+          <p className="fs-3 fw-bold">Let Us Work For You</p>
+          <p className="fs-5">
+            Take back your precious time with IRekommend <br /> by saving an
+            average of 18 minutes <br />
+            per job application and doing
+            <br /> what you want instead.
+          </p>
         </div>
 
         <div className="mx-auto my-auto px-5">
-        <img src={draw} alt={"logo"} style={{ zIndex: -1, width: "100%", maxHeight: "500px" }} className=" my-5 py-5" />
+          <img
+            src={draw}
+            alt={"logo"}
+            style={{ zIndex: -1, width: "100%", maxHeight: "500px" }}
+            className=" my-5 py-5"
+          />
         </div>
-
       </div>
     </div>
   );
 
-
   const sec3 = () => (
     <div className="position-relative skewx">
-
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
     </div>
-  )
+  );
 
-  return <div className="home">{navBar()} {cardx()} {sec2()} {sec3()}</div>;
+  return (
+    <div className="home">
+      {navBar()} {cardx()} {sec2()} {sec3()}
+    </div>
+  );
 };
 
 export default Home;
