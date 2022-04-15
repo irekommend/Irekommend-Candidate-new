@@ -27,6 +27,7 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import PaidIcon from "@mui/icons-material/Paid";
 import CastForEducationIcon from "@mui/icons-material/CastForEducation";
 import { styled, createTheme } from "@mui/material/styles";
+import Header from "../comp/Header";
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
@@ -74,65 +75,26 @@ const Home = () => {
       <img
         src={svg1}
         alt={"logo"}
-        style={{ zIndex: "-3", opacity:"0.7"}}
+        style={{ zIndex: "-3", opacity: "0.7" }}
         className="position-absolute top-0 start-0"
       />
       <img
         src={svg2}
         alt={"logo"}
-        style={{ zIndex: "-3", opacity:"0.7"}}
+        style={{ zIndex: "-3", opacity: "0.7" }}
         className="position-absolute bottom-0 end-0"
       />
-      <Navbar
-        collapseOnSelect
-        expand="sm"
-        className="fixed-top py-3 px-4"
-        style={{
-          fontFamily: "Roboto,sans-serif",
-          zIndex: 10,
-          transition: "1s ease",
-          backgroundColor: navBackground ? "white" : "transparent",
-        }}
-        scrolling
-      >
-        <Navbar.Brand href="#home">
-          <h3>IRekommend</h3>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
-            <Nav.Link href="#features" className="fs-6 text-dark mx-3">
-              Home
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="fs-6 text-dark mx-3">
-              About
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="fs-6 text-dark mx-3">
-              Blog
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="fs-6 text-dark mx-3">
-              Learn
-            </Nav.Link>
-          </Nav>
-          <Nav>
-            <Button variant="contained">Contained</Button>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-
-      
       <div
         className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
-        style={{ height: "100%", overflow:"auto" }}
+        style={{ height: "100%", overflow: "auto" }}
       >
         {/* <p className="fs-1 fw-bold"> Get Hired Faster </p> */}
 
-        <Typography variant="h2"  style={{fontWeight: 'bold'}}  >
-          Get <span className="text-grad"> Hired Faster </span> 
+        <Typography variant="h2" style={{ fontWeight: "bold" }}>
+          Get <span className="text-grad"> Hired Faster </span>
         </Typography>
 
         <p className="fs-3">
-          
           With <span className="text-grad fw-bold">Insider Access</span> to
           Hiring Manager
         </p>
@@ -154,7 +116,7 @@ const Home = () => {
           </Button>
         </div>
 
-        <div className="d-flex flex-row flex-wrap text-center justify-content-evenly " >
+        <div className="d-flex flex-row flex-wrap text-center justify-content-evenly ">
           <Button variant="outlined" className="mx-2 my-2">
             React.js
           </Button>
@@ -177,13 +139,8 @@ const Home = () => {
           <Button variant="outlined" className="mx-2 my-2">
             Machine Learning
           </Button>
-
         </div>
-       
       </div>
-
-       
-
     </div>
   );
 
@@ -263,7 +220,6 @@ const Home = () => {
           </Card.Body>
         </Card>
       </div>
-
     </div>
   );
 
@@ -401,11 +357,58 @@ const Home = () => {
     </Skewd>
   );
 
-  const sec4 = () => <div style={{ height: "100vh" }}></div>;
+  const sec4 = () => (
+    <div>
+      <div className="d-flex justify-content-evenly align-items-center pt-5 mt-5">
+        <Typography variant="h4" style={{ fontWeight: "bold" }}>
+          We are growing
+        </Typography>
+      </div>
+      <div className="d-flex justify-content-around align-items-stretch flex-wrap mx-5 my-5">
+        <div className="d-flex align-items-stretch flex-column my-3">
+          <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
+            537
+          </Typography>
+          <Typography variant="h6" >
+            Technology skills
+          </Typography>
+          <Typography variant="body2">
+            We track skills, languages, <br/> and platforms to match qualified <br/>
+            developers with the right companies.
+          </Typography>
+        </div>
+        <div className="d-flex align-items-stretch flex-column my-3">
+          <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
+          8375
+          </Typography>
+          <Typography variant="h6" >
+          Experienced developers
+          </Typography>
+          <Typography variant="body2">
+          Thousands of developers have been <br/>
+vetted and accepted to join the remote <br/>
+community and find work through Moonlight.
+          </Typography>
+        </div>
+        <div className="d-flex align-items-stretch flex-column my-3">
+          <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
+            537
+          </Typography>
+          <Typography variant="h6" >
+            Technology skills
+          </Typography>
+          <Typography variant="body2">
+            We track skills, languages, <br/> and platforms to match qualified <br/>
+            developers with the right companies.
+          </Typography>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="home">
-      {navBar()} {cardx()} {sec2()} {sec3()}
+      {navBar()} {cardx()} {sec2()} {sec3()} {sec4()}   
     </div>
   );
 };
