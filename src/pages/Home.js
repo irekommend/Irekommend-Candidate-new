@@ -110,7 +110,7 @@ const Home = () => {
   const cardx = () => (
     <div className="position-relative sec2 ">
       <div className="d-flex justify-content-evenly align-items-stretch flex-wrap mx-5 py-3">
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right" data-aos-once="true">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -128,7 +128,7 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right" data-aos-once="true">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -146,7 +146,7 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left" data-aos-once="true">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -164,7 +164,7 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left" data-aos-once="true">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -206,6 +206,7 @@ const Home = () => {
             style={{ zIndex: -1, width: "100%", maxHeight: "500px" }}
             className=" my-5 py-5"
             data-aos="zoom-in"
+            data-aos-once="true"
           />
         </div>
       </div>
@@ -259,7 +260,6 @@ const Home = () => {
             alt={"logo"}
             style={{ zIndex: -1, width: "100%", maxHeight: "500px" }}
             className=" my-5 py-5"
-            data-aos="zoom-in"
           />
         </div>
         <div className="mx-auto my-auto text-center px-5">
