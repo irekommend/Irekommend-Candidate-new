@@ -169,15 +169,14 @@ body{
 
 .footer {
 	align-items: center;
-	background-color: #262626;
+	background-color: #000;
 	bottom: 0;
 	color: #666666;
 	display: flex;
 	font-size: 5em;
-	height: 400px;
+	height: 500px;
 	justify-content: center;
 	position: fixed;
-	text-transform: uppercase;
 	width: 100%;
 	z-index: 0;
 }

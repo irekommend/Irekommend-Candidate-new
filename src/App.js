@@ -16,7 +16,7 @@ const App=()=>{
                 <Route path="/blog" element={<Blog/>}></Route>
             </Routes>
                         
-            <div style={{height: "400px"}} >{Footer()}</div>
+            <div style={{height: "500px"}} >{Footer()}</div>
 
         </div>
     )

@@ -38,13 +38,13 @@ const Home = () => {
       <img
         src={svg1}
         alt={"logo"}
-        style={{ zIndex: "0", opacity: "0.7" }}
+        style={{ zIndex: "-1", opacity: "0.7" }}
         className="position-absolute top-0 start-0"
       />
       <img
         src={svg2}
         alt={"logo"}
-        style={{ zIndex: "0", opacity: "0.7" }}
+        style={{ zIndex: "-1", opacity: "0.7" }}
         className="position-absolute bottom-0 end-0"
       />
       <div

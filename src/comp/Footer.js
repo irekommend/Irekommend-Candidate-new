@@ -36,15 +36,14 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 const Footer = () => {
   const footer = () => (
     <div
-      className="d-flex flex-column justify-content-center align-items-center text-center"
-      style={{ height: "100%" }}
-    >
+        className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
+        style={{ height: "100%", overflow: "auto" }}
+      >
       <Typography variant="h5" style={{ color: "white" }}>
         Subscribe to our newsletter to obtain product updates
       </Typography>
 
       <div
-        div
         className="d-flex flex-row flex-wrap justify-content-center mt-3"
       >
         <TextField
@@ -65,12 +64,12 @@ const Footer = () => {
       </div>
 
       <div
-        className="d-flex flex-row flex-wrap justify-content-center alige-items-stretch mt-3"
+        className="d-flex flex-row flex-wrap-reverse justify-content-center alige-items-stretch mt-3"
       >
-        <Typography varient="body2" style={{ color: "white" }}>
+        <Typography varient="body2" style={{ color: "white" }} className="mt-3">
           Let's get in touch on any of these platforms
         </Typography>
-        <div className="d-flex flex-row mx-3">
+        <div className="d-flex flex-row mx-3 mt-3" >
           <LinkedInIcon
             className="mx-3"
             style={{ fontSize: "30px", color: blue[700] }}
@@ -88,35 +87,34 @@ const Footer = () => {
             style={{ fontSize: "30px", color: pink[500] }}
           />
         </div>
-
-        
-      </div>
-      <div className="position-absolute bottom-0 start-50 translate-middle-x">
-      <Typography variant="caption" style={{ color: "white" }}>
-            iRekommend ©2022 ALL RIGHTS RESERVED
-          </Typography>
-          
-        <div className="d-flex flex-row my-0 py-0">
-          <Typography variant="caption" style={{ color: "white" }} className="mx-3">
-            Terms of Service
-          </Typography>
-          <Typography variant="caption" style={{ color: "white" }} className="mx-3">
-            Privacy Policy
-          </Typography>
-          <Typography variant="caption" style={{ color: "white" }} className="mx-3">
-            Terms & Conditions
-          </Typography>
-        </div>
       </div>
          
     </div>
   );
 
-  const bottom = () => {};
+  const bottom = () => (
+    <div className="position-absolute bottom-0 start-50 translate-middle-x d-flex flex-column justify-content-center align-items-center text-center">
+    <Typography variant="caption" style={{ color: "white" }}>
+          iRekommend ©2022 ALL RIGHTS RESERVED
+    </Typography>
+        
+      <div className="d-flex flex-row my-0 py-0">
+        <Typography variant="caption" style={{ color: "white" }} className="mx-3">
+          Terms of Service
+        </Typography>
+        <Typography variant="caption" style={{ color: "white" }} className="mx-3">
+          Privacy Policy
+        </Typography>
+        <Typography variant="caption" style={{ color: "white" }} className="mx-3">
+          Terms & Conditions
+        </Typography>
+      </div>
+    </div>
+  );
 
   return (
     <div className="footer">
-      {footer()} {bottom()}
+      {footer()} 
     </div>
   );
 };
