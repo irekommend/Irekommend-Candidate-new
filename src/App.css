@@ -166,6 +166,10 @@ body{
   animation-delay:4s;
 }
 
+.btn{
+  background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
+}
+
 
 .footer {
 	align-items: center;

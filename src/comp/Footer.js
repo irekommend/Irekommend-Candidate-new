@@ -56,7 +56,7 @@ const Footer = () => {
         />
         <Button
           variant="contained"
-          className="mx-3 my-3"
+          className="mx-3 my-3 btn"
           style={{ fontSize: "1rem", padding: "13px 23px" }}
         >
           Search

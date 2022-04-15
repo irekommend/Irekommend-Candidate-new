@@ -102,7 +102,7 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Button variant="contained">Contained</Button>
+            <Button variant="contained" className="btn">Contained</Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
