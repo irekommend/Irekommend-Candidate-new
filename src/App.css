@@ -2,6 +2,12 @@
   color: #37c871 !important;
 }
 
+.text-grad{
+  background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .skewx {
   background: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
   animation: Gradient 15s ease infinite;

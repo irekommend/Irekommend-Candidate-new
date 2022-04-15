@@ -8,6 +8,7 @@ import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import draw from "../img/draw.svg";
 import draw1 from "../img/draw1.svg";
+import Typography from "@mui/material/Typography";
 import {
   Navbar,
   Container,
@@ -25,7 +26,7 @@ import HandshakeIcon from "@mui/icons-material/Handshake";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import PaidIcon from "@mui/icons-material/Paid";
 import CastForEducationIcon from "@mui/icons-material/CastForEducation";
-import { styled, createTheme } from '@mui/material/styles';
+import { styled, createTheme } from "@mui/material/styles";
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
@@ -45,31 +46,31 @@ const Home = () => {
     };
   }, []);
 
-  const hasWindow = typeof window !== 'undefined';
+  const hasWindow = typeof window !== "undefined";
 
   const [winDim, detectHW] = useState({
     winWidth: hasWindow ? window.innerWidth : null,
-    winHeight: hasWindow ? window.innerHeight : null
+    winHeight: hasWindow ? window.innerHeight : null,
   });
 
   const detectSize = () => {
     detectHW({
       winWidth: window.innerWidth,
-      winHeight: window.innerHeight
-    })
+      winHeight: window.innerHeight,
+    });
   };
 
   useEffect(() => {
-    window.addEventListener('resize', detectSize)
+    window.addEventListener("resize", detectSize);
 
     return () => {
-      window.removeEventListener('resize', detectSize)
+      window.removeEventListener("resize", detectSize);
     };
   }, [winDim]);
   console.log(winDim);
 
   const navBar = () => (
-    <div className="position-relative vh-100">
+    <div className="position-relative vh-100 ">
       <img
         src={svg1}
         alt={"logo"}
@@ -119,19 +120,24 @@ const Home = () => {
         </Navbar.Collapse>
       </Navbar>
 
+      
       <div
         className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
-        style={{ height: "100%" }}
+        style={{ height: "100%", overflow:"auto" }}
       >
-        <p className="fs-1 fw-bold"> Get Hired Faster </p>
+        {/* <p className="fs-1 fw-bold"> Get Hired Faster </p> */}
+
+        <Typography variant="h2"  style={{fontWeight: 'bold'}}  >
+          Get <span className="text-grad"> Hired Faster </span> 
+        </Typography>
 
         <p className="fs-3">
-          {" "}
-          With <span className="text-primary fw-bold">Insider Access</span> to
+          
+          With <span className="text-grad fw-bold">Insider Access</span> to
           Hiring Manager
         </p>
 
-        <div div className="d-flex flex-row flex-wrap justify-content-center">
+        <div div className="d-flex flex-row flex-wrap justify-content-center ">
           <TextField
             id="outlined-basic"
             label="Search for Jobs"
@@ -148,7 +154,7 @@ const Home = () => {
           </Button>
         </div>
 
-        <div className="d-flex flex-row flex-wrap mx-5 pt-5">
+        <div className="d-flex flex-row flex-wrap text-center justify-content-evenly " >
           <Button variant="outlined" className="mx-2 my-2">
             Outlined
           </Button>
@@ -176,7 +182,11 @@ const Home = () => {
             Outlined
           </Button>
         </div>
+       
       </div>
+
+       
+
     </div>
   );
 
@@ -256,6 +266,7 @@ const Home = () => {
           </Card.Body>
         </Card>
       </div>
+
     </div>
   );
 
@@ -284,30 +295,29 @@ const Home = () => {
     </div>
   );
 
-
-  const Skewd = styled('div')(({ theme }) => ({
+  const Skewd = styled("div")(({ theme }) => ({
     padding: theme.spacing(1),
-    [theme.breakpoints.down('lg')]: {
-      height: "1200px"
+    [theme.breakpoints.down("lg")]: {
+      height: "1200px",
     },
-    [theme.breakpoints.up('lg')]: {
-      height: "600px"
+    [theme.breakpoints.up("lg")]: {
+      height: "600px",
     },
   }));
   const theme2 = createTheme({
     breakpoints: {
       values: {
-        break: 1048
+        break: 1048,
       },
     },
   });
-  const Flexed = styled('div')(({ theme2 }) => ({
+  const Flexed = styled("div")(({ theme2 }) => ({
     padding: theme2.spacing(1),
-    [theme2.breakpoints.down('break')]: {
-      flexDirection: 'row-reverse'
+    [theme2.breakpoints.down("break")]: {
+      flexDirection: "row-reverse",
     },
-    [theme2.breakpoints.up('break')]: {
-      flexDirection: 'row'
+    [theme2.breakpoints.up("break")]: {
+      flexDirection: "row",
     },
   }));
 
@@ -395,15 +405,11 @@ const Home = () => {
     </Skewd>
   );
 
-  const sec4=()=>(
-<div style={{height:"100vh"}}>
-
-</div>
-  );
+  const sec4 = () => <div style={{ height: "100vh" }}></div>;
 
   return (
     <div className="home">
-      {navBar()} {cardx()} {sec2()} {sec3()} 
+      {navBar()} {cardx()} {sec2()} {sec3()}
     </div>
   );
 };
