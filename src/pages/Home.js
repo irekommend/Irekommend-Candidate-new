@@ -74,13 +74,13 @@ const Home = () => {
       <img
         src={svg1}
         alt={"logo"}
-        style={{ zIndex: -1 }}
+        style={{ zIndex: "-3", opacity:"0.7"}}
         className="position-absolute top-0 start-0"
       />
       <img
         src={svg2}
         alt={"logo"}
-        style={{ zIndex: -3 }}
+        style={{ zIndex: "-3", opacity:"0.7"}}
         className="position-absolute bottom-0 end-0"
       />
       <Navbar
@@ -143,7 +143,7 @@ const Home = () => {
             label="Search for Jobs"
             variant="outlined"
             className="mx-3 my-3"
-            style={{ width: "70vw" }}
+            style={{ width: "65vw" }}
           />
           <Button
             variant="contained"
@@ -156,31 +156,28 @@ const Home = () => {
 
         <div className="d-flex flex-row flex-wrap text-center justify-content-evenly " >
           <Button variant="outlined" className="mx-2 my-2">
-            Outlined
+            React.js
           </Button>
           <Button variant="outlined" className="mx-2 my-2">
-            Outlined
+            Aws
           </Button>
 
           <Button variant="outlined" className="mx-2 my-2">
-            Outlined
+            Google Cloud
           </Button>
 
           <Button variant="outlined" className="mx-2 my-2">
-            Outlined
+            Web Development
           </Button>
 
           <Button variant="outlined" className="mx-2 my-2">
-            Outlined
+            Python
           </Button>
 
           <Button variant="outlined" className="mx-2 my-2">
-            Outlined
+            Machine Learning
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2">
-            Outlined
-          </Button>
         </div>
        
       </div>
