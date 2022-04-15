@@ -9,6 +9,7 @@ import Paper from "@mui/material/Paper";
 import draw from "../img/draw.svg";
 import draw1 from "../img/draw1.svg";
 import Typography from "@mui/material/Typography";
+import CountUp from 'react-countup';
 import {
   Navbar,
   Container,
@@ -109,7 +110,7 @@ const Home = () => {
   const cardx = () => (
     <div className="position-relative sec2 ">
       <div className="d-flex justify-content-evenly align-items-stretch flex-wrap mx-5 py-3">
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -127,7 +128,7 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -145,7 +146,7 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -163,7 +164,7 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c">
+        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left">
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -204,6 +205,7 @@ const Home = () => {
             alt={"logo"}
             style={{ zIndex: -1, width: "100%", maxHeight: "500px" }}
             className=" my-5 py-5"
+            data-aos="zoom-in"
           />
         </div>
       </div>
@@ -257,6 +259,7 @@ const Home = () => {
             alt={"logo"}
             style={{ zIndex: -1, width: "100%", maxHeight: "500px" }}
             className=" my-5 py-5"
+            data-aos="zoom-in"
           />
         </div>
         <div className="mx-auto my-auto text-center px-5">
@@ -329,7 +332,7 @@ const Home = () => {
       <div className="d-flex justify-content-around align-items-stretch flex-wrap mx-5 my-5">
         <div className="d-flex align-items-stretch flex-column my-3">
           <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
-            537
+          <CountUp end={537} duration={5}/>
           </Typography>
           <Typography variant="h6" >
             Technology skills
@@ -341,7 +344,7 @@ const Home = () => {
         </div>
         <div className="d-flex align-items-stretch flex-column my-3">
           <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
-          8375
+          <CountUp end={8357} duration={5}/>
           </Typography>
           <Typography variant="h6" >
           Experienced developers
@@ -354,7 +357,7 @@ community and find work through Moonlight.
         </div>
         <div className="d-flex align-items-stretch flex-column my-3">
           <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
-            537
+          <CountUp end={117} duration={5}/>
           </Typography>
           <Typography variant="h6" >
             Technology skills
