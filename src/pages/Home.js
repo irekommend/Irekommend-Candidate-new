@@ -50,7 +50,7 @@ const Home = () => {
       />
       <div
         className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
-        style={{ height: "100%", overflow: "auto" }}
+        style={{ height: "100%"}}
       >
 
         <Typography variant="h2" style={{ fontWeight: "bold" }}>

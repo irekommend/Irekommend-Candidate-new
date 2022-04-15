@@ -1,32 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import ReactDOM from "react-dom";
-import Image from "react-bootstrap/Image";
-import svg1 from "../img/back.svg";
-import svg2 from "../img/back2.svg";
 import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Paper from "@mui/material/Paper";
-import draw from "../img/draw.svg";
-import draw1 from "../img/draw1.svg";
 import Typography from "@mui/material/Typography";
-import {
-  Navbar,
-  Container,
-  Nav,
-  Card,
-  Form,
-  InputGroup,
-  FormControl,
-  ListGroup,
-} from "react-bootstrap";
 import Button from "@mui/material/Button";
 import { indigo, blue, pink, orange } from "@mui/material/colors";
-import MenuIcon from "@mui/icons-material/Menu";
-import HandshakeIcon from "@mui/icons-material/Handshake";
-import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
-import PaidIcon from "@mui/icons-material/Paid";
-import CastForEducationIcon from "@mui/icons-material/CastForEducation";
-import { styled, createTheme } from "@mui/material/styles";
 import "../App.css";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -36,8 +12,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 const Footer = () => {
   const footer = () => (
     <div
-        className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
-        style={{ height: "100%", overflow: "auto" }}
+        className="d-flex flex-column justify-content-center align-items-center text-center"
+        style={{ height: "100%" }}
       >
       <Typography variant="h5" style={{ color: "white" }}>
         Subscribe to our newsletter to obtain product updates
