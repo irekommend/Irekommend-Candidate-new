@@ -1,6 +1,11 @@
 body{
   color: #213547 !important;
+  background-color: #fff;
+}
 
+.home {
+  position: relative;
+  z-index: 1;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -31,6 +36,10 @@ body{
 
 .sec2{
   background: #f2f4f8;
+}
+
+.white-bg {
+  background: #fff;
 }
 
 .card-c{
@@ -156,6 +165,28 @@ body{
   animation-duration:10s;
   animation-delay:4s;
 }
+
+
+.footer {
+	align-items: center;
+	background-color: #262626;
+	bottom: 0;
+	color: #666666;
+	display: flex;
+	font-size: 5em;
+	height: 400px;
+	justify-content: center;
+	position: fixed;
+	text-transform: uppercase;
+	width: 100%;
+	z-index: 0;
+}
+
+/* .txtfld {
+  border: 2px solid #37c871 !important;
+  border-radius: 10px;
+} */
+
 @keyframes rise{
   0%{
     bottom:-100px;

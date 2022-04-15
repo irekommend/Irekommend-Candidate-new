@@ -31,64 +31,26 @@ import Header from "../comp/Header";
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
-  const [navBackground, setNavBackground] = useState(false);
-  const navRef = useRef();
-  navRef.current = navBackground;
-  useEffect(() => {
-    const handleScroll = () => {
-      const show = window.scrollY > 50;
-      if (navRef.current !== show) {
-        setNavBackground(show);
-      }
-    };
-    document.addEventListener("scroll", handleScroll);
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const hasWindow = typeof window !== "undefined";
-
-  const [winDim, detectHW] = useState({
-    winWidth: hasWindow ? window.innerWidth : null,
-    winHeight: hasWindow ? window.innerHeight : null,
-  });
-
-  const detectSize = () => {
-    detectHW({
-      winWidth: window.innerWidth,
-      winHeight: window.innerHeight,
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", detectSize);
-
-    return () => {
-      window.removeEventListener("resize", detectSize);
-    };
-  }, [winDim]);
-  console.log(winDim);
+  
 
   const navBar = () => (
     <div className="position-relative vh-100 ">
       <img
         src={svg1}
         alt={"logo"}
-        style={{ zIndex: "-3", opacity: "0.7" }}
+        style={{ zIndex: "0", opacity: "0.7" }}
         className="position-absolute top-0 start-0"
       />
       <img
         src={svg2}
         alt={"logo"}
-        style={{ zIndex: "-3", opacity: "0.7" }}
+        style={{ zIndex: "0", opacity: "0.7" }}
         className="position-absolute bottom-0 end-0"
       />
       <div
         className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
         style={{ height: "100%", overflow: "auto" }}
       >
-        {/* <p className="fs-1 fw-bold"> Get Hired Faster </p> */}
 
         <Typography variant="h2" style={{ fontWeight: "bold" }}>
           Get <span className="text-grad"> Hired Faster </span>
@@ -224,7 +186,7 @@ const Home = () => {
   );
 
   const sec2 = () => (
-    <div className="position-relative ">
+    <div className="position-relative">
       <div className="d-flex flex-row justify-content-center align-items-center flex-wrap ">
         <div className="mx-auto my-auto text-center">
           <p className="fs-3 fw-bold mt-5">Let Us Work For You</p>
@@ -358,7 +320,7 @@ const Home = () => {
   );
 
   const sec4 = () => (
-    <div>
+    <div className="pb-4">
       <div className="d-flex justify-content-evenly align-items-center pt-5 mt-5">
         <Typography variant="h4" style={{ fontWeight: "bold" }}>
           We are growing
@@ -407,7 +369,7 @@ community and find work through Moonlight.
   );
 
   return (
-    <div className="home">
+    <div className="home white-bg" style={{ zIndex: 1}}>
       {navBar()} {cardx()} {sec2()} {sec3()} {sec4()}   
     </div>
   );
