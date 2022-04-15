@@ -333,7 +333,7 @@ const Home = () => {
         <div class="bubble"></div>
       </div>
       <div className="d-flex flex-row justify-content-center align-items-center flex-wrap-reverse mt-5 bubbles">
-        <div className="mx-auto my-auto px-5">
+        <div className="mx-auto my-auto ">
           <img
             src={draw1}
             alt={"logo"}
@@ -341,8 +341,7 @@ const Home = () => {
             className=" my-5 py-5"
           />
         </div>
-
-        <div className="mx-auto my-auto text-center">
+        <div className="mx-auto my-auto text-center px-5">
           <Card style={{ width: "25rem" }} className="mx-3 my-3 card-c">
             <Card.Body>
               <div
