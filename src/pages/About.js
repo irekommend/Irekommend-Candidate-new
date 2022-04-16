@@ -61,7 +61,7 @@ const About = () => {
 
         <Grid container xs={12} direction="row" justifyContent="space-evenly" alignItems="center">
           <Grid item xs={4}>
-            <div class="card" id="advisor1" val={fp}>
+            <div class="card-adv" val={fp}>
               <img
                 src={pinchhu}
                 alt={"logo"}
@@ -72,7 +72,7 @@ const About = () => {
           </Grid>
 
           <Grid item xs={4}>
-            <div class="card">
+            <div class="card-adv">
               <img
                 src={pinchhu}
                 alt={"logo"}
@@ -83,7 +83,7 @@ const About = () => {
           </Grid>
 
           <Grid item xs={4}>
-            <div class="card">
+            <div class="card-adv">
               <img
                 src={pinchhu}
                 alt={"logo"}

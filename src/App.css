@@ -203,7 +203,7 @@ body{
 }
 
 /* From uiverse.io by @Vikikos */
-.card {
+.card-adv {
   width: 261px;
   height: 350px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
@@ -215,7 +215,7 @@ body{
   transition: all .4s;
  }
  
- .card::before {
+ .card-adv::before {
   content: attr(val);
   letter-spacing: 0.2em;
   position: absolute;
@@ -230,7 +230,7 @@ body{
    content: attr(val);
  } */
  
- .card img {
+ .card-adv img {
   width: 100%;
   height: 100%;
   border-radius: 20px;
@@ -241,7 +241,7 @@ body{
   background-size: cover;
  }
  
- .card:hover img {
+ .card-adv:hover img {
   transform: translateY(-30px);
  }
 
