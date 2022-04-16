@@ -1,6 +1,32 @@
+import React, { useState, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
+import Image from "react-bootstrap/Image";
+import svg1 from "../img/back.svg";
+import svg2 from "../img/back2.svg";
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
+import draw from "../img/draw.svg";
+import draw1 from "../img/draw1.svg";
+import Typography from "@mui/material/Typography";
+import {
+  Navbar,
+  Container,
+  Nav,
+  Card,
+  Form,
+  InputGroup,
+  FormControl,
+  ListGroup,
+} from "react-bootstrap";
 import Button from "@mui/material/Button";
-import React, { useEffect, useRef, useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { red, blue, green, orange } from "@mui/material/colors";
+import MenuIcon from "@mui/icons-material/Menu";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import PaidIcon from "@mui/icons-material/Paid";
+import CastForEducationIcon from "@mui/icons-material/CastForEducation";
+import { styled, createTheme } from "@mui/material/styles";
 
 const Header = () => {
   const [navBackground, setNavBackground] = useState(false);
@@ -62,23 +88,21 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="/" className="fs-6 text-dark mx-3">
+            <Nav.Link href="#features" className="fs-6 text-dark mx-3">
               Home
             </Nav.Link>
-            <Nav.Link href="/about" className="fs-6 text-dark mx-3">
+            <Nav.Link href="#pricing" className="fs-6 text-dark mx-3">
               About
             </Nav.Link>
-            <Nav.Link href="/blog" className="fs-6 text-dark mx-3">
+            <Nav.Link href="#pricing" className="fs-6 text-dark mx-3">
               Blog
             </Nav.Link>
-            <Nav.Link href="/learn" className="fs-6 text-dark mx-3">
+            <Nav.Link href="#pricing" className="fs-6 text-dark mx-3">
               Learn
             </Nav.Link>
           </Nav>
           <Nav>
-            <Button variant="contained" className="btn">
-              Contained
-            </Button>
+            <Button variant="contained" className="btn">Contained</Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
