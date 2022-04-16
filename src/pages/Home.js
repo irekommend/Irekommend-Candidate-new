@@ -1,39 +1,21 @@
-import React, { useState, useRef, useEffect } from "react";
-import ReactDOM from "react-dom";
-import Image from "react-bootstrap/Image";
+import CastForEducationIcon from "@mui/icons-material/CastForEducation";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import PaidIcon from "@mui/icons-material/Paid";
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import Button from "@mui/material/Button";
+import { blue, green, orange, red } from "@mui/material/colors";
+import { styled } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import React from "react";
+import { Card } from "react-bootstrap";
+import CountUp from "react-countup";
 import svg1 from "../img/back.svg";
 import svg2 from "../img/back2.svg";
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Paper from "@mui/material/Paper";
 import draw from "../img/draw.svg";
 import draw1 from "../img/draw1.svg";
-import Typography from "@mui/material/Typography";
-import CountUp from 'react-countup';
-import {
-  Navbar,
-  Container,
-  Nav,
-  Card,
-  Form,
-  InputGroup,
-  FormControl,
-  ListGroup,
-} from "react-bootstrap";
-import Button from "@mui/material/Button";
-import { red, blue, green, orange } from "@mui/material/colors";
-import MenuIcon from "@mui/icons-material/Menu";
-import HandshakeIcon from "@mui/icons-material/Handshake";
-import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
-import PaidIcon from "@mui/icons-material/Paid";
-import CastForEducationIcon from "@mui/icons-material/CastForEducation";
-import { styled, createTheme } from "@mui/material/styles";
-import Header from "../comp/Header";
-// import { Link, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
-  
-
   const navBar = () => (
     <div className="position-relative vh-100 ">
       <img
@@ -50,9 +32,8 @@ const Home = () => {
       />
       <div
         className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
-        style={{ height: "100%"}}
+        style={{ height: "100%" }}
       >
-
         <Typography variant="h2" style={{ fontWeight: "bold" }}>
           Get <span className="text-grad"> Hired Faster </span>
         </Typography>
@@ -110,7 +91,12 @@ const Home = () => {
   const cardx = () => (
     <div className="position-relative sec2 ">
       <div className="d-flex justify-content-evenly align-items-stretch flex-wrap mx-5 py-3">
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right" data-aos-once="true">
+        <Card
+          style={{ width: "15rem" }}
+          className="mx-3 my-3 card-c"
+          data-aos="fade-right"
+          data-aos-once="true"
+        >
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -128,7 +114,12 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-right" data-aos-once="true">
+        <Card
+          style={{ width: "15rem" }}
+          className="mx-3 my-3 card-c"
+          data-aos="fade-right"
+          data-aos-once="true"
+        >
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -146,7 +137,12 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left" data-aos-once="true">
+        <Card
+          style={{ width: "15rem" }}
+          className="mx-3 my-3 card-c"
+          data-aos="fade-left"
+          data-aos-once="true"
+        >
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -164,7 +160,12 @@ const Home = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card style={{ width: "15rem" }} className="mx-3 my-3 card-c" data-aos="fade-left" data-aos-once="true">
+        <Card
+          style={{ width: "15rem" }}
+          className="mx-3 my-3 card-c"
+          data-aos="fade-left"
+          data-aos-once="true"
+        >
           <Card.Body>
             <div
               className="d-flex justify-content-center icon mb-3"
@@ -220,22 +221,6 @@ const Home = () => {
     },
     [theme.breakpoints.up("lg")]: {
       height: "600px",
-    },
-  }));
-  const theme2 = createTheme({
-    breakpoints: {
-      values: {
-        break: 1048,
-      },
-    },
-  });
-  const Flexed = styled("div")(({ theme2 }) => ({
-    padding: theme2.spacing(1),
-    [theme2.breakpoints.down("break")]: {
-      flexDirection: "row-reverse",
-    },
-    [theme2.breakpoints.up("break")]: {
-      flexDirection: "row",
     },
   }));
 
@@ -331,39 +316,47 @@ const Home = () => {
       </div>
       <div className="d-flex justify-content-around align-items-stretch flex-wrap mx-5 my-5">
         <div className="d-flex align-items-stretch flex-column my-3">
-          <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
-          <CountUp end={537} duration={5}/>
+          <Typography
+            variant="h4"
+            style={{ fontWeight: "bold" }}
+            className="text-grad-sm"
+          >
+            <CountUp end={537} duration={5} />
           </Typography>
-          <Typography variant="h6" >
-            Technology skills
-          </Typography>
+          <Typography variant="h6">Technology skills</Typography>
           <Typography variant="body2">
-            We track skills, languages, <br/> and platforms to match qualified <br/>
+            We track skills, languages, <br /> and platforms to match qualified{" "}
+            <br />
             developers with the right companies.
           </Typography>
         </div>
         <div className="d-flex align-items-stretch flex-column my-3">
-          <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
-          <CountUp end={8357} duration={5}/>
+          <Typography
+            variant="h4"
+            style={{ fontWeight: "bold" }}
+            className="text-grad-sm"
+          >
+            <CountUp end={8357} duration={5} />
           </Typography>
-          <Typography variant="h6" >
-          Experienced developers
-          </Typography>
+          <Typography variant="h6">Experienced developers</Typography>
           <Typography variant="body2">
-          Thousands of developers have been <br/>
-vetted and accepted to join the remote <br/>
-community and find work through Moonlight.
+            Thousands of developers have been <br />
+            vetted and accepted to join the remote <br />
+            community and find work through Moonlight.
           </Typography>
         </div>
         <div className="d-flex align-items-stretch flex-column my-3">
-          <Typography variant="h4" style={{ fontWeight: "bold" }} className="text-grad-sm">
-          <CountUp end={117} duration={5}/>
+          <Typography
+            variant="h4"
+            style={{ fontWeight: "bold" }}
+            className="text-grad-sm"
+          >
+            <CountUp end={117} duration={5} />
           </Typography>
-          <Typography variant="h6" >
-            Technology skills
-          </Typography>
+          <Typography variant="h6">Technology skills</Typography>
           <Typography variant="body2">
-            We track skills, languages, <br/> and platforms to match qualified <br/>
+            We track skills, languages, <br /> and platforms to match qualified{" "}
+            <br />
             developers with the right companies.
           </Typography>
         </div>
@@ -372,8 +365,8 @@ community and find work through Moonlight.
   );
 
   return (
-    <div className="home white-bg" style={{ zIndex: 1}}>
-      {navBar()} {cardx()} {sec2()} {sec3()} {sec4()}   
+    <div className="home white-bg" style={{ zIndex: 1 }}>
+      {navBar()} {cardx()} {sec2()} {sec3()} {sec4()}
     </div>
   );
 };
