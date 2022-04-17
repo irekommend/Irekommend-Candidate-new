@@ -16,7 +16,7 @@ import draw from "../img/draw.svg";
 import draw1 from "../img/draw1.svg";
 
 const Home = () => {
-  const navBar = () => (
+  const hero = () => (
     <div className="position-relative vh-100 ">
       <img
         src={svg1}
@@ -88,8 +88,8 @@ const Home = () => {
     </div>
   );
 
-  const cardx = () => (
-    <div className="position-relative sec2 ">
+  const cards = () => (
+    <div className="position-relative grey-bg">
       <div className="d-flex justify-content-evenly align-items-stretch flex-wrap mx-5 py-3">
         <Card
           style={{ width: "15rem" }}
@@ -224,7 +224,7 @@ const Home = () => {
     },
   }));
 
-  const sec3 = () => (
+  const skewDiv = () => (
     <Skewd className="position-relative skewx">
       <div class="bubbles">
         <div class="bubble"></div>
@@ -307,7 +307,7 @@ const Home = () => {
     </Skewd>
   );
 
-  const sec4 = () => (
+  const growing = () => (
     <div className="pb-4">
       <div className="d-flex justify-content-evenly align-items-center pt-5 mt-5">
         <Typography variant="h4" style={{ fontWeight: "bold" }}>
@@ -366,7 +366,7 @@ const Home = () => {
 
   return (
     <div className="home white-bg" style={{ zIndex: 1 }}>
-      {navBar()} {cardx()} {sec2()} {sec3()} {sec4()}
+      {hero()} {cards()} {sec2()} {skewDiv()} {growing()}
     </div>
   );
 };

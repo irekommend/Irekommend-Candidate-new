@@ -1,13 +1,13 @@
-import React, { useState, useRef, useEffect } from "react";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import Button from "@mui/material/Button";
+import { blue, indigo, pink } from "@mui/material/colors";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { indigo, blue, pink, orange } from "@mui/material/colors";
+import React from "react";
 import "../App.css";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = () => {
   const footer = () => (

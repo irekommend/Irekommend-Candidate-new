@@ -1,105 +1,202 @@
-import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { blue } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
-import pinchhu from "../img/pinchhu.jpeg";
+import svg4 from "../img/mission.svg";
+import tcs from "../img/tcs.png";
+import svg3 from "../img/vision.svg";
 
 const About = () => {
-  const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    // margin: theme.spacing(10),
-    padding: theme.spacing(1),
-    textAlign: "left",
-    // color: theme.palette.text.secondary,
-  }));
+  
+  const hero = () => (
+    <div className="position-relative vh-100 about-hero">
+      <div
+        className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
+        style={{ height: "100%" }}
+      >
+        <Typography variant="h2" style={{ fontWeight: "bold" }}>
+          Know <span className="text-grad"> iRekommend </span>
+        </Typography>
 
-  const first = () => (
-    <div style={{ margin: "100px 200px" }}>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <Typography variant="h4">What we do?</Typography>
-        </Grid>
-        <Grid item xs={8}>
-          <Typography variant="body1">
-            We started iRekommend in 2021 to simplify the hiring process and
-            create an engagement platform between hiring managers and
-            candidates. <br /> Our “Augmented Intelligence” platform connects
-            hiring managers with candidates directly while supporting candidates
-            to position themselves effectively in interview process.
-          </Typography>
-        </Grid>
-
-        <Grid item xs={4}>
-          <Typography variant="h4">Why us?</Typography>
-        </Grid>
-        <Grid item xs={8}>
-          <Typography variant="body1">
-            We are a team of technology savvy professionals who have been
-            struggling with hiring right teams far too long. <br /> We have
-            noticed the challenges and decided to solve this problem once and
-            for all by creating a “Decentralized” platform between hiring
-            managers and candidates alike! The “Decentralized” platform
-            endeavors to deliver value for all stakeholders - hiring managers,
-            candidates, recruiters, enabled via technology.
-          </Typography>
-        </Grid>
-      </Grid>
+        <Typography variant="body1" className="my-1 w-75">
+          We started iRekommend in 2021 to simplify the hiring process and
+          create an engagement platform between hiring managers and candidates.
+          Our “Augmented Intelligence” platform connects hiring managers with
+          candidates directly while supporting candidates to position themselves
+          effectively in interview process. We are a team of technology savvy
+          professionals who have been struggling with hiring right teams far too
+          long. We have noticed the challenges and decided to solve this problem
+          once and for all by creating a “Decentralized” platform between hiring
+          managers and candidates alike! The “Decentralized” platform endeavors
+          to deliver value for all stakeholders - hiring managers, candidates,
+          recruiters, enabled via technology.
+        </Typography>
+      </div>
     </div>
   );
 
-  const fp = ['<pre>Person',
-  'Position',
-  'Else</pre>'
- ].join('\n');
+  const vision = () => (
+    <div className="position-relative grey-bg">
+      <div className="d-flex flex-row justify-content-center align-items-center flex-wrap ">
+        <div
+          className="mx-auto my-auto text-center w-50"
+          style={{ minWidth: "300px" }}
+        >
+          <Typography variant="h3" className="fw-bold mt-5">
+            Our Vision
+          </Typography>
+          <Typography className="fs-5 ">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia,
+            nobis facere recusandae cum necessitatibus velit adipisci nihil fuga
+            voluptatibus explicabo quisquam magni quia suscipit exercitationem
+            ad sed molestiae tenetur vitae?
+          </Typography>
+        </div>
+
+        <div className="mx-auto my-auto px-5">
+          <img
+            src={svg3}
+            alt={"vision"}
+            style={{ width: "100%", maxHeight: "500px" }}
+            className=" my-5 py-5"
+            data-aos="zoom-in"
+            data-aos-once="true"
+          />
+        </div>
+      </div>
+    </div>
+  );
+
+  const mission = () => (
+    <div className="position-relative">
+      <div className="d-flex flex-row flex-wrap-reverse justify-content-center align-items-center">
+        <div className="mx-auto my-auto px-5">
+          <img
+            src={svg4}
+            alt={"mission"}
+            style={{ width: "100%", maxHeight: "500px" }}
+            className=" my-5 py-5"
+            data-aos="zoom-in"
+            data-aos-once="false"
+          />
+        </div>
+
+        <div
+          className="mx-auto my-auto text-center w-50"
+          style={{ minWidth: "300px" }}
+        >
+          <Typography variant="h3" className="fw-bold mt-5">
+            Our Mission
+          </Typography>
+          <Typography className="fs-5 ">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia,
+            nobis facere recusandae cum necessitatibus velit adipisci nihil fuga
+            voluptatibus explicabo quisquam magni quia suscipit exercitationem
+            ad sed molestiae tenetur vitae?
+          </Typography>
+        </div>
+      </div>
+    </div>
+  );
 
   const advisors = () => (
-    <div style={{ margin: "100px 200px" }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} textAlign={"center"}>
-          <Typography variant="h4">Advisors</Typography>
-        </Grid>
+    <div className="position-relative grey-bg pt-5">
+      <Typography variant="h3" className="fw-bold" textAlign={"center"}>
+        Advisors
+      </Typography>
 
-        <Grid container xs={12} direction="row" justifyContent="space-evenly" alignItems="center">
-          <Grid item xs={4}>
-            <div class="card-adv" val={fp}>
-              <img
-                src={pinchhu}
-                alt={"logo"}
-                style={{ zIndex: "1" }}
-                className="position-absolute top-0 start-0"
-              />
+      <div class="mx-5 my-5">
+        <div class="d-flex flex-wrap justify-content-evenly align-items-center">
+          <div style={{ width: "18rem" }}>
+            <div class="our-team">
+              <div class="picture">
+                <img
+                  class="img-fluid"
+                  src="https://picsum.photos/130/130?image=1027"
+                />
+              </div>
+              <div class="team-content">
+                <h3 class="name">Michele Miller</h3>
+                <h4 class="title">Web Developer</h4>
+              </div>
+              <div className="social">
+                <LinkedInIcon
+                  className="mx-3 licon"
+                  style={{ fontSize: "40px", color: blue[50] }}
+                >
+                  <a href=""></a>
+                </LinkedInIcon>
+              </div>
             </div>
-          </Grid>
+          </div>
+          <div style={{ width: "18rem" }}>
+            <div class="our-team">
+              <div class="picture">
+                <img
+                  class="img-fluid"
+                  src="https://picsum.photos/130/130?image=839"
+                />
+              </div>
+              <div class="team-content">
+                <h3 class="name">Patricia Knott</h3>
+                <h4 class="title">Web Developer</h4>
+              </div>
+              <div className="social">
+                <LinkedInIcon
+                  className="mx-3 licon"
+                  style={{ fontSize: "40px", color: blue[50] }}
+                >
+                  <a href=""></a>
+                </LinkedInIcon>
+              </div>
+            </div>
+          </div>
+          <div style={{ width: "18rem" }}>
+            <div class="our-team">
+              <div class="picture">
+                <img
+                  class="img-fluid"
+                  src="https://picsum.photos/130/130?image=856"
+                />
+              </div>
+              <div class="team-content">
+                <h3 class="name">Justin Ramos</h3>
+                <h4 class="title">Web Developer</h4>
+              </div>
+              <div className="social">
+                <LinkedInIcon
+                  className="mx-3 licon"
+                  style={{ fontSize: "40px", color: blue[50] }}
+                >
+                  <a href=""></a>
+                </LinkedInIcon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
-          <Grid item xs={4}>
-            <div class="card-adv">
-              <img
-                src={pinchhu}
-                alt={"logo"}
-                style={{ zIndex: "1" }}
-                className="position-absolute top-0 start-0"
-              />
-            </div>
-          </Grid>
+  const clients = () => (
+    <div className="position-relative">
+      <Typography variant="h3" className="fw-bold mt-5" textAlign={"center"}>
+        Clients
+      </Typography>
 
-          <Grid item xs={4}>
-            <div class="card-adv">
-              <img
-                src={pinchhu}
-                alt={"logo"}
-                style={{ zIndex: "1" }}
-                className="position-absolute top-0 start-0"
-              />
-            </div>
-          </Grid>
-        </Grid>
-      </Grid>
+      <div class="mx-5 my-5">
+        <div class="d-flex flex-wrap justify-content-evenly align-items-center">
+          <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
+          <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
+          <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
+          <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
+        </div>
+      </div>
     </div>
   );
 
   return (
     <div className="about">
-      {first()} {advisors()}
+      {hero()} {vision()} {mission()} {advisors()} {clients()}
     </div>
   );
 };

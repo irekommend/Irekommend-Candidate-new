@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="993.56" height="480.98" version="1.1" viewBox="0 0 262.88 127.26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient1530">
+   <stop stop-color="#2a7fff" offset="0"/>
+   <stop stop-color="#2affd5" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient6662" x1="-322.93" x2="-301.11" y1="12.546" y2="35.456" gradientTransform="translate(529.66 147.28)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1530"/>
+  <linearGradient id="linearGradient7000" x1="-348.46" x2="-309.83" y1="159.37" y2="159.37" gradientTransform="translate(321.83 8.1822)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1530"/>
+  <linearGradient id="linearGradient7008" x1="-295.81" x2="-266.7" y1="155.67" y2="155.67" gradientTransform="translate(353.47 67.64)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1530"/>
+  <linearGradient id="linearGradient7016" x1="-272.26" x2="-260.09" y1="82.116" y2="82.116" gradientTransform="translate(353.47 67.64)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1530"/>
+  <linearGradient id="linearGradient7024" x1="-219.61" x2="-207.97" y1="52.747" y2="52.747" gradientTransform="translate(353.47 67.64)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1530"/>
+  <linearGradient id="linearGradient7032" x1="-236.54" x2="-201.62" y1="150.91" y2="150.91" gradientTransform="matrix(.78524 0 0 .78524 175.01 63.821)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1530"/>
+  <linearGradient id="linearGradient7040" x1="-205.85" x2="-179.92" y1="106.99" y2="106.99" gradientTransform="translate(358.38 112.91)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1530"/>
+ </defs>
+ <g transform="translate(44.626 -110.6)">
+  <g stroke-width=".26458">
+   <circle cx="87.299" cy="149.76" r="6.0854" fill="url(#linearGradient7016)" opacity=".3"/>
+   <circle cx="165.5" cy="219.9" r="12.965" fill="url(#linearGradient7040)" opacity=".3"/>
+   <circle cx="139.69" cy="120.39" r="5.8208" fill="url(#linearGradient7024)" opacity=".3"/>
+   <circle cx="217.19" cy="170.39" r="18.521" fill="url(#linearGradient6662)" opacity=".3"/>
+   <circle cx="72.218" cy="223.31" r="14.552" fill="url(#linearGradient7008)" opacity=".3"/>
+   <circle cx="-7.31" cy="167.56" r="19.315" fill="url(#linearGradient7000)" opacity=".3"/>
+  </g>
+  <circle cx="2.9852" cy="182.32" r="13.712" fill="url(#linearGradient7032)" opacity=".3" stroke-width=".20776"/>
+ </g>
+</svg>

@@ -17,23 +17,27 @@ body{
   position: relative;
   z-index: 1;
   background-color: #fff;
+  overflow-y: auto;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
   color: #37c871 !important;
 }
 
-.text-grad{
-  background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-.text-grad-sm{
-  background: -webkit-linear-gradient(85deg,#42d392 25%,#647eff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* ! text gradient */
+  .text-grad{
+    background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-grad-sm{
+    background: -webkit-linear-gradient(85deg,#42d392 25%,#647eff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 
 .skewx {
   background: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
@@ -45,7 +49,9 @@ body{
   transform: skew(0, -4deg);
 }
 
-.sec2{
+
+/* ! backgrounds */
+.grey-bg{
   background: #f2f4f8;
 }
 
@@ -53,31 +59,34 @@ body{
   background: #fff;
 }
 
-.card-c{
-  background: #fff;
-  border-top-right-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  box-shadow: 0 14px 26px rgba(0,0,0,0.09);
-  transition: all 0.3s ease-out;
-  text-decoration: none;
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
-.card-c:hover {
-  transform: translateY(-5px) scale(1.005) translateZ(0);
-  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
-    0 24px 46px var(--box-shadow-color);
-}
+/* ! cards from home */
+  .card-c{
+    background: #fff;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.09);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
-.card-c:hover .overlay {
-  transform: scale(4) translateZ(0);
-}
+  .card-c:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+      0 24px 46px var(--box-shadow-color);
+  }
+
+  .card-c:hover .overlay {
+    transform: scale(4) translateZ(0);
+  }
+
 
 .icon {
   width: 50px;
@@ -87,95 +96,99 @@ body{
   text-align: center;
 }
 
-.bubbles{
-  position:absolute;
-  width:100%;
-  height: 100%;
-  z-index:0;
-  overflow:hidden;
-  top:0;
-  transform: skew(0, 4deg);
-  left:0;
-}
-.bubble{
-  position: absolute;
-  bottom:-100px;
-  width:40px;
-  height: 40px;
-  background:#f1f1f1;
-  border-radius:50%;
-  opacity:0.3;
-  animation: rise 10s infinite ease-in;
-}
-.bubble:nth-child(1){
-  width:40px;
-  height:40px;
-  left:10%;
-  animation-duration:8s;
-}
-.bubble:nth-child(2){
-  width:20px;
-  height:20px;
-  left:20%;
-  animation-duration:5s;
-  animation-delay:1s;
-}
-.bubble:nth-child(3){
-  width:50px;
-  height:50px;
-  left:35%;
-  animation-duration:7s;
-  animation-delay:2s;
-}
-.bubble:nth-child(4){
-  width:80px;
-  height:80px;
-  left:50%;
-  animation-duration:11s;
-  animation-delay:0s;
-}
-.bubble:nth-child(5){
-  width:35px;
-  height:35px;
-  left:55%;
-  animation-duration:6s;
-  animation-delay:1s;
-}
-.bubble:nth-child(6){
-  width:45px;
-  height:45px;
-  left:65%;
-  animation-duration:8s;
-  animation-delay:3s;
-}
-.bubble:nth-child(7){
-  width:90px;
-  height:90px;
-  left:70%;
-  animation-duration:12s;
-  animation-delay:2s;
-}
-.bubble:nth-child(8){
-  width:25px;
-  height:25px;
-  left:80%;
-  animation-duration:6s;
-  animation-delay:2s;
-}
-.bubble:nth-child(9){
-  width:15px;
-  height:15px;
-  left:70%;
-  animation-duration:5s;
-  animation-delay:1s;
-}
-.bubble:nth-child(10){
-  width:90px;
-  height:90px;
-  left:25%;
-  animation-duration:10s;
-  animation-delay:4s;
-}
+
+/* ! bubbles from skewed part */
+  .bubbles{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    z-index:0;
+    overflow:hidden;
+    top:0;
+    transform: skew(0, 4deg);
+    left:0;
+  }
+  .bubble{
+    position: absolute;
+    bottom:-100px;
+    width:40px;
+    height: 40px;
+    background:#f1f1f1;
+    border-radius:50%;
+    opacity:0.3;
+    animation: rise 10s infinite ease-in;
+  }
+  .bubble:nth-child(1){
+    width:40px;
+    height:40px;
+    left:10%;
+    animation-duration:8s;
+  }
+  .bubble:nth-child(2){
+    width:20px;
+    height:20px;
+    left:20%;
+    animation-duration:5s;
+    animation-delay:1s;
+  }
+  .bubble:nth-child(3){
+    width:50px;
+    height:50px;
+    left:35%;
+    animation-duration:7s;
+    animation-delay:2s;
+  }
+  .bubble:nth-child(4){
+    width:80px;
+    height:80px;
+    left:50%;
+    animation-duration:11s;
+    animation-delay:0s;
+  }
+  .bubble:nth-child(5){
+    width:35px;
+    height:35px;
+    left:55%;
+    animation-duration:6s;
+    animation-delay:1s;
+  }
+  .bubble:nth-child(6){
+    width:45px;
+    height:45px;
+    left:65%;
+    animation-duration:8s;
+    animation-delay:3s;
+  }
+  .bubble:nth-child(7){
+    width:90px;
+    height:90px;
+    left:70%;
+    animation-duration:12s;
+    animation-delay:2s;
+  }
+  .bubble:nth-child(8){
+    width:25px;
+    height:25px;
+    left:80%;
+    animation-duration:6s;
+    animation-delay:2s;
+  }
+  .bubble:nth-child(9){
+    width:15px;
+    height:15px;
+    left:70%;
+    animation-duration:5s;
+    animation-delay:1s;
+  }
+  .bubble:nth-child(10){
+    width:90px;
+    height:90px;
+    left:25%;
+    animation-duration:10s;
+    animation-delay:4s;
+  }
+
+
 
 .btn{
   background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
@@ -202,54 +215,119 @@ body{
   background-size: cover;
 }
 
-/* From uiverse.io by @Vikikos */
-.card-adv {
-  width: 261px;
-  height: 350px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
-  background: #fff;
-  display: flex;
-  border-radius: 20px;
-  justify-content: center;
+
+/* ! for About > Hero content */
+.about-hero {
   position: relative;
-  transition: all .4s;
- }
- 
- .card-adv::before {
-  content: attr(val);
-  letter-spacing: 0.2em;
-  position: absolute;
-  bottom: 8px;
-  left: 20px;
-  color: rgb(51, 51, 51);
-  font-size: 0.8em;
-  font-weight: 700;
- }
+}
 
- /* #advisor1::before {
-   content: attr(val);
- } */
- 
- .card-adv img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
-  cursor: pointer;
-  z-index: 10;
-  transition: all .4s;
-  background-size: cover;
- }
- 
- .card-adv:hover img {
-  transform: translateY(-30px);
- }
+.about-hero::before {    
+    content: "";
+    background-image: url('./img/back3.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+}
 
-/* .txtfld {
-  border: 2px solid #37c871 !important;
-  border-radius: 10px;
-} */
 
+/* ! About > Advisors cards */
+  .our-team {
+    padding: 30px 0 40px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+  }
+
+  .our-team .picture {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 30px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .our-team:hover .picture::before {
+    height: 100%;
+  }
+
+  .our-team .picture::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(315deg,#42d392 25%,#647eff);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .our-team .picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.9s ease 0s;
+  }
+
+  .our-team:hover .picture img {
+    box-shadow: 0 0 0 6px #f7f5ec;
+    transform: scale(0.9);
+  }
+
+  .our-team .title {
+    display: block;
+    font-size: 15px;
+    color: #4e5052;
+    text-transform: capitalize;
+  }
+
+  .our-team .social {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(315deg,#42d392 25%,#647eff);
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+
+  .our-team:hover .social {
+    bottom: 0;
+  }
+
+  .our-team .social .licon {
+    display: inline-block;
+  }
+
+  .our-team .social .licon a {
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+  }
+
+  .our-team .social .licon a:hover {
+    color: linear-gradient(315deg,#42d392 25%,#647eff);
+    background-color: #f7f5ec;
+  }
+
+
+
+/* ! animations */
 @keyframes rise{
   0%{
     bottom:-100px;
