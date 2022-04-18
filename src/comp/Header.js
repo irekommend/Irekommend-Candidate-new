@@ -53,8 +53,8 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Button variant="contained" className="btn">
-              Contained
+            <Button variant="contained" href="/login" className="btn">
+              Log in
             </Button>
           </Nav>
         </Navbar.Collapse>
