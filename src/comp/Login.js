@@ -1,3 +1,5 @@
+import GoogleIcon from "@mui/icons-material/Google";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -8,7 +10,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
@@ -24,6 +26,17 @@ export default function SignIn() {
       password: data.get("password"),
     });
   };
+
+  // Custom Button
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.primary,
+    border: "1px solid",
+    borderColor: theme.palette.primary.light,
+    "&:hover": {
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.getContrastText(theme.palette.primary.main),
+    },
+  }));
 
   const Login = () => (
     <ThemeProvider theme={theme}>
@@ -53,13 +66,54 @@ export default function SignIn() {
               Log in
             </Typography>
 
-            <Box>
-                Google
-                LinkedIn
+            {/* Google and LinkedIn Login box */}
+            <Box className="w-100">
+              <Box className="d-flex flex-row justify-content-around mt-4 log-buttons">
+                <Button variant="outlined">
+                  <GoogleIcon
+                    // color="primary"
+                    fontSize="large"
+                    style={{ marginRight: "5px" }}
+                  />
+                  Google
+                </Button>
+                <Button>
+                  <LinkedInIcon
+                    // color="primary"
+                    fontSize="large"
+                    style={{ marginRight: "5px" }}
+                  />
+                  LinkedIn
+                </Button>
+                <ColorButton>
+                  <LinkedInIcon
+                    // color="primary"
+                    fontSize="large"
+                    style={{ marginRight: "5px" }}
+                  />
+                  LinkedIn
+                </ColorButton>
+              </Box>
+              {/* or line */}
+              <div className="d-flex flex-row align-items-center">
+                <div style={{ flex: 1, height: 1, backgroundColor: "#0006" }} />
+                <div>
+                  <Typography
+                    style={{
+                      fontSize: 14,
+                      width: 30,
+                      textAlign: "center",
+                      color: "#0006",
+                    }}
+                  >
+                    or
+                  </Typography>
+                </div>
+                <div style={{ flex: 1, height: 1, backgroundColor: "#0006" }} />
+              </div>
             </Box>
 
-<hr/>
-
+            {/* Login Form */}
             <Box
               component="form"
               onSubmit={handleSubmit}
@@ -74,7 +128,7 @@ export default function SignIn() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                autoFocus
+                // autoFocus
               />
               <TextField
                 margin="normal"
@@ -98,21 +152,6 @@ export default function SignIn() {
               >
                 Log In
               </Button>
-
-              {/* or line */}
-              <div className="d-flex flex-row align-items-center">
-                <div style={{ flex: 1, height: 1, backgroundColor: "#0006" }} />
-                <div>
-                  <Typography
-                    style={{ fontSize: 14, width: 30, textAlign: "center", color: "#0006" }}
-                  >
-                    or
-                  </Typography>
-                </div>
-                <div style={{ flex: 1, height: 1, backgroundColor: "#0006" }} />
-              </div>
-
-
 
               {/* bottom part */}
               <Grid container>

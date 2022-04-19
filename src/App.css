@@ -580,6 +580,11 @@ body{
 }
 
 
+.log-buttons {
+  color: #000;
+}
+
+
 
 /* ! animations */
 @keyframes rise{
