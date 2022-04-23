@@ -13,6 +13,8 @@ import Header from "./comp/Header";
 import Footer from "./comp/Footer";
 import Login from "./comp/Login";
 import Signup from "./comp/Signup";
+import JobList from "./pages/JobList";
+import PNF from "./pages/PNF";
 
 const App = () => {
   useEffect(() => {
@@ -32,6 +34,8 @@ const App = () => {
         <Route path="/learn" element={<Learn />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/Signup" element={<Signup />}></Route>
+        <Route path="/search/:jobtitle" element={<JobList/>}></Route>
+        <Route path="*" element={<PNF />}></Route>
       </Routes>
 
       <div style={{ height: "500px" }}>{Footer()}</div>

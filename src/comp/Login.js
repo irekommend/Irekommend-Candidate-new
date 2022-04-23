@@ -14,6 +14,8 @@ import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import google from "../img/google-logo.png";
+
 
 const theme = createTheme();
 
@@ -28,10 +30,25 @@ export default function SignIn() {
   };
 
   // Custom Button
-  const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.primary,
+  const GoogleButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.error.light,
+    "& GoogleIcon": { color: theme.palette.error.main },
     border: "1px solid",
-    borderColor: theme.palette.primary.light,
+    borderColor: "#0007",
+    borderRadius: 50,
+    marginBottom: 10,
+    "&:hover": {
+      backgroundColor: "#f001",
+      // color: theme.palette.getContrastText(theme.palette.error.main),
+    },
+  }));
+
+  const LinkedInButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.primary.light,
+    border: "1px solid",
+    borderColor: "#0007",
+    borderRadius: 50,
+    marginBottom: 10,
     "&:hover": {
       backgroundColor: theme.palette.primary.light,
       color: theme.palette.getContrastText(theme.palette.primary.main),
@@ -68,31 +85,24 @@ export default function SignIn() {
 
             {/* Google and LinkedIn Login box */}
             <Box className="w-100">
-              <Box className="d-flex flex-row justify-content-around mt-4 log-buttons">
-                <Button variant="outlined">
+              <Box className="d-flex flex-column justify-content-around mt-4 log-buttons">
+                <GoogleButton>
                   <GoogleIcon
-                    // color="primary"
+                    // color="error"
                     fontSize="large"
+                    // sx={{ "GoogleButton:hover": { color: "white" } }}
                     style={{ marginRight: "5px" }}
                   />
-                  Google
-                </Button>
-                <Button>
+                  Sign in with Google
+                </GoogleButton>
+                <LinkedInButton>
                   <LinkedInIcon
                     // color="primary"
                     fontSize="large"
                     style={{ marginRight: "5px" }}
                   />
-                  LinkedIn
-                </Button>
-                <ColorButton>
-                  <LinkedInIcon
-                    // color="primary"
-                    fontSize="large"
-                    style={{ marginRight: "5px" }}
-                  />
-                  LinkedIn
-                </ColorButton>
+                  Sign in with LinkedIn
+                </LinkedInButton>
               </Box>
               {/* or line */}
               <div className="d-flex flex-row align-items-center">

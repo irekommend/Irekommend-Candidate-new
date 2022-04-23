@@ -7,7 +7,7 @@ import { blue, green, orange, red } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import CountUp from "react-countup";
 import svg1 from "../img/back.svg";
@@ -16,6 +16,24 @@ import draw from "../img/draw.svg";
 import draw1 from "../img/draw1.svg";
 
 const Home = () => {
+  const [jobTitle, setJobTitle] = useState("");
+
+  // Custom Button
+  const SearchButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(theme.palette.error.main),
+    backgroundColor: theme.palette.primary.main,
+    border: "1px solid",
+    borderColor: theme.palette.primary.main,
+    marginBottom: 10,
+    fontSize: "1rem",
+    padding: "13px 23px",
+    "&:hover": {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.getContrastText(theme.palette.primary.main),
+      boxShadow: "0 3px 10px #0004",
+    },
+  }));
+
   const hero = () => (
     <div className="position-relative vh-100 ">
       <img
@@ -30,6 +48,8 @@ const Home = () => {
         style={{ zIndex: "0", opacity: "0.7" }}
         className="position-absolute bottom-0 end-0"
       />
+
+      {/* Text and search bar */}
       <div
         className="d-flex flex-column justify-content-center align-items-center text-center mx-3 py-0"
         style={{ height: "100%" }}
@@ -43,21 +63,20 @@ const Home = () => {
           Hiring Manager
         </p>
 
+        {/* Search Bar */}
         <div div className="d-flex flex-row flex-wrap justify-content-center ">
           <TextField
             id="outlined-basic"
             label="Search for Jobs"
+            onChange={(e) => setJobTitle(e.target.value)}
+            value={jobTitle}
             variant="outlined"
             className="mx-3 my-3"
             style={{ width: "65vw" }}
           />
-          <Button
-            variant="contained"
-            className="mx-3 my-3"
-            style={{ fontSize: "1rem", padding: "13px 23px" }}
-          >
+          <SearchButton href={`/search/${jobTitle}`} className="mx-3 my-3">
             Search
-          </Button>
+          </SearchButton>
         </div>
 
         <div className="d-flex flex-row flex-wrap text-center justify-content-evenly ">

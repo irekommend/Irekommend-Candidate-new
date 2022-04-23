@@ -13,7 +13,7 @@ body{
   z-index: 1;
 }
 
-.about, .blog, .login, .signup {
+.about, .blog, .login, .signup, .joblist {
   position: relative;
   z-index: 1;
   background-color: #fff;
@@ -578,12 +578,6 @@ body{
 .s-blog-user-info > small {
   color: #666;
 }
-
-
-.log-buttons {
-  color: #000;
-}
-
 
 
 /* ! animations */
