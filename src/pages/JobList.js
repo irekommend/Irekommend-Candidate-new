@@ -1,10 +1,11 @@
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+
 // import svg1 from "../img/job-bg1.svg";
 // import svg2 from "../img/job-bg2.svg";
 
@@ -15,6 +16,7 @@ const JobList = (props) => {
   const [selectedJob, setSelectedJob] = useState({});
   const [run, setRun] = useState(false);
 
+  const [isShown, setIsShown] = useState(false);
   const today = Date();
 
   const getDays = (d) => {
@@ -24,7 +26,15 @@ const JobList = (props) => {
   };
 
   const cnvrtr = (t) => {
-    return `${t}`;
+    // return `${t}`;
+    return t.split("\n").map(function (item, idx) {
+      return (
+        <span key={idx}>
+          {item}
+          <br />
+        </span>
+      );
+    });
   };
 
   const hasWindow = typeof window !== "undefined";
@@ -134,6 +144,11 @@ const JobList = (props) => {
         <Typography variant="caption" className="flex-grow-1 text-muted">
           Posted {getDays(job.job.Processed_Date)} days ago
         </Typography>
+        {/* {isShown ? (
+          <FavoriteIcon color="error" onMouseLeave={() => setIsShown(false)} />
+        ) : (
+          <FavoriteBorderOutlinedIcon onMouseEnter={() => setIsShown(true)} />
+        )} */}
         <FavoriteBorderOutlinedIcon />
       </div>
     </div>
@@ -153,16 +168,19 @@ const JobList = (props) => {
           <p className="h5">{job.job.Company}</p>
           <p className="h5">{job.job.Location}</p>
         </div>
-        <div className="p-3 d-flex align-self-end">
-          <Button
-            className="btn"
-            variant="contained"
-            href="#"
-            size="large"
-            style={{ maxWidth: "fit-content", height: "fit-content" }}
-          >
-            Apply
-          </Button>
+        <div className="p-3 align-self-end">
+          <div className="d-flex align-items-center p-3 gap-3">
+            <Button
+              className="btn"
+              variant="contained"
+              href="#"
+              size="large"
+              style={{ maxWidth: "fit-content", height: "fit-content" }}
+            >
+              Apply
+            </Button>
+            <FavoriteBorderOutlinedIcon />
+          </div>
         </div>
       </div>
 
@@ -199,7 +217,18 @@ const JobList = (props) => {
           </div>
 
           <div className="mt-3">
-            <Typography>{cnvrtr(job.job.job_description_text)}</Typography>
+            <Typography>
+              {job.job.job_description_text
+                .split("\n")
+                .map(function (item, idx) {
+                  return (
+                    <span key={idx}>
+                      {item}
+                      <br />
+                    </span>
+                  );
+                })}
+            </Typography>
           </div>
         </div>
       </div>
@@ -224,7 +253,14 @@ const JobList = (props) => {
       <div className="row">
         <div className="col-4 overflow-auto" style={{ height: "70vh" }}>
           {jobs.map((j, i) => (
-            <JobCard job={j} />
+            <JobCard
+              job={j}
+              style={{
+                "&:hover": {
+                  boxShadow: "0 3px 10px #0004",
+                },
+              }}
+            />
           ))}
         </div>
         <div className="col-8">

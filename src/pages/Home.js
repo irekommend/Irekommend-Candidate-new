@@ -69,6 +69,7 @@ const Home = () => {
             id="outlined-basic"
             label="Search for Jobs"
             onChange={(e) => setJobTitle(e.target.value)}
+            onKeyDown={ (e) => { if ( e.key === 'Enter') {}}}
             value={jobTitle}
             variant="outlined"
             className="mx-3 my-3"

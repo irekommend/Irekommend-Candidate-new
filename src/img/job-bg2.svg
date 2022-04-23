@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="visual" width="1536" height="714" version="1.1" viewBox="0 0 1536 714" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <linearGradient id="linearGradient874">
+   <stop stop-color="#2a7fff" offset="0"/>
+   <stop stop-color="#2affd5" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient876" x1="278.91" x2="-66.606" y1="343.51" y2="335.11" gradientTransform="translate(-428.77)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient874"/>
+  <linearGradient id="linearGradient884" x1="1270.9" x2="1588" y1="373.65" y2="350.76" gradientTransform="translate(-3e-5)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient874"/>
+ </defs>
+ <path d="m1378 714 13.3-13.2c13.4-13.1 40-39.5 36.7-66s-36.7-53.1-33.5-79.6 42.8-52.9 37.2-79.2c-5.7-26.3-56.7-52.7-78.9-79.2-22.1-26.5-15.5-53.1 11.9-79.6 27.3-26.5 75.3-52.9 81-79.2 5.6-26.3-31-52.7-55.9-79.2-24.8-26.5-37.8-53.1-26.1-79.6 11.6-26.5 48-52.9 66.1-66l18.2-13.2h88v13.2 66 79.6 79.2 79.2 79.6 79.2 79.2 79.6 66 13.2z" fill="url(#linearGradient884)" stroke-linecap="round"/>
+ <path d="m-268.77 0-13.3 13.2c-13.4 13.1-40 39.5-36.7 66s36.7 53.1 33.5 79.6-42.8 52.9-37.2 79.2c5.7 26.3 56.7 52.7 78.9 79.2 22.1 26.5 15.5 53.1-11.9 79.6-27.3 26.5-75.3 52.9-81 79.2-5.6 26.3 31 52.7 55.9 79.2 24.8 26.5 37.8 53.1 26.1 79.6-11.6 26.5-48 52.9-66.1 66l-18.2 13.2h-90v-13.2-66-79.6-79.2-79.2-79.6-79.2-79.2-79.6-66-13.2z" fill="url(#linearGradient876)" stroke-linecap="round"/>
+</svg>
