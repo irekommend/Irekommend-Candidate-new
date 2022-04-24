@@ -81,26 +81,26 @@ const Home = () => {
         </div>
 
         <div className="d-flex flex-row flex-wrap text-center justify-content-evenly ">
-          <Button variant="outlined" className="mx-2 my-2">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/react">
             React.js
           </Button>
-          <Button variant="outlined" className="mx-2 my-2">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/aws">
             Aws
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/google">
             Google Cloud
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/web">
             Web Development
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/python">
             Python
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/machine">
             Machine Learning
           </Button>
         </div>

@@ -15,10 +15,11 @@ const JobList = (props) => {
   const [jobTitle, setJobTitle] = useState("");
   const [selectedJob, setSelectedJob] = useState({});
   const [run, setRun] = useState(false);
+  // console.log(selectedJob.Job_ID);
 
   const today = Date();
 
-  // to get x in "Posted x days ago"
+  // ! to get x in "Posted x days ago"
   const getDays = (d) => {
     return Math.floor(
       (Date.parse(today) - Date.parse(d)) / (1000 * 60 * 60 * 24)
@@ -41,7 +42,7 @@ const JobList = (props) => {
     },
   }));
 
-  // to get window dimensions ---------
+  // ! to get window dimensions ---------
   const hasWindow = typeof window !== "undefined";
 
   function getWindowDimensions() {
@@ -67,8 +68,8 @@ const JobList = (props) => {
       return () => window.removeEventListener("resize", handleResize);
     }
   }, [hasWindow]);
-  console.log(windowDimensions);
-  // -----------------------------------
+  // console.log(windowDimensions);
+  // ! -----------------------------------
 
   useEffect(() => {
     fetch(
@@ -76,9 +77,9 @@ const JobList = (props) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setJobs(data);
-        setSelectedJob(data[0]);
+        // setSelectedJob(data[0]);
       });
   }, [run]);
 
@@ -120,6 +121,7 @@ const JobList = (props) => {
         height: "fit-content",
       }}
     >
+      {/* {console.log(selectedJob)} */}
       <h5 style={{ fontWeight: "bold", marginBottom: "3px" }}>
         {job.job.job_role_title}
       </h5>
@@ -159,9 +161,10 @@ const JobList = (props) => {
             <Button
               className="btn"
               variant="contained"
-              href="#"
               size="large"
               style={{ maxWidth: "fit-content", height: "fit-content" }}
+              // to open a link in new tab
+              onClick={() => window.open(job.job.Apply_Link, "_blank")}
             >
               Apply
             </Button>
@@ -192,9 +195,9 @@ const JobList = (props) => {
         </div>
 
         <div>
-        <Typography variant="h6">Description</Typography>
+          <Typography variant="h6">Description</Typography>
 
-        <div
+          <div
             className="my-3 pb-3"
             style={{ borderBottom: "1px solid #0001" }}
           >
@@ -222,6 +225,21 @@ const JobList = (props) => {
     </div>
   );
 
+  const SelectJobDisplay = () => (
+    <div
+      className="card m-3 overflow-auto"
+      style={{ fontFamily: "Roboto,sans-serif", height: "70vh" }}
+    >
+      <Typography
+        variant="h5"
+        textAlign={"center"}
+        style={{ marginTop: "50px", fontWeight: "bold" }}
+      >
+        Select the Job
+      </Typography>
+    </div>
+  );
+
   const listing1 = () => (
     <div className="col-11 mx-auto vh-100">
       <div className="row">
@@ -231,7 +249,11 @@ const JobList = (props) => {
           ))}
         </div>
         <div className="col-8">
-          <SelectedJobDisplay job={selectedJob} />
+          {selectedJob.Job_ID === undefined ? (
+            <SelectJobDisplay />
+          ) : (
+            <SelectedJobDisplay job={selectedJob} />
+          )}
         </div>
       </div>
     </div>
@@ -245,16 +267,12 @@ const JobList = (props) => {
         {windowDimensions.width > 800
           ? listing1()
           : jobs.map((j, i) => <JobCard job={j} />)}
-        {/* <hr/> {<SelectedJobDisplay job={selectedJob} />} */}
       </div>
-    </div>
-  );
-
-  return (
-    <div className="joblist">
-      {SearchBar()} <hr /> {listing1()}
     </div>
   );
 };
 
 export default JobList;
+
+
+//https://irekommend-ml-utility.ue.r.appspot.com/search-jobs?search_string=${routeParams.job_title}&${routeParams.location}
