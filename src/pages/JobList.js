@@ -16,27 +16,32 @@ const JobList = (props) => {
   const [selectedJob, setSelectedJob] = useState({});
   const [run, setRun] = useState(false);
 
-  const [isShown, setIsShown] = useState(false);
   const today = Date();
 
+  // to get x in "Posted x days ago"
   const getDays = (d) => {
     return Math.floor(
       (Date.parse(today) - Date.parse(d)) / (1000 * 60 * 60 * 24)
     );
   };
 
-  const cnvrtr = (t) => {
-    // return `${t}`;
-    return t.split("\n").map(function (item, idx) {
-      return (
-        <span key={idx}>
-          {item}
-          <br />
-        </span>
-      );
-    });
-  };
+  // Custom Button
+  const SearchButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(theme.palette.error.main),
+    backgroundColor: theme.palette.primary.main,
+    border: "1px solid",
+    borderColor: theme.palette.primary.main,
+    marginBottom: 10,
+    fontSize: "1rem",
+    padding: "13px 23px",
+    "&:hover": {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.getContrastText(theme.palette.primary.main),
+      boxShadow: "0 3px 10px #0004",
+    },
+  }));
 
+  // to get window dimensions ---------
   const hasWindow = typeof window !== "undefined";
 
   function getWindowDimensions() {
@@ -63,22 +68,7 @@ const JobList = (props) => {
     }
   }, [hasWindow]);
   console.log(windowDimensions);
-
-  // Custom Button
-  const SearchButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(theme.palette.error.main),
-    backgroundColor: theme.palette.primary.main,
-    border: "1px solid",
-    borderColor: theme.palette.primary.main,
-    marginBottom: 10,
-    fontSize: "1rem",
-    padding: "13px 23px",
-    "&:hover": {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.getContrastText(theme.palette.primary.main),
-      boxShadow: "0 3px 10px #0004",
-    },
-  }));
+  // -----------------------------------
 
   useEffect(() => {
     fetch(
@@ -123,15 +113,11 @@ const JobList = (props) => {
         cursor: "pointer",
         fontFamily: "Roboto,sans-serif",
         border:
-          job.job.Job_ID == selectedJob.Job_ID
+          job.job.Job_ID === selectedJob.Job_ID
             ? "2px solid #0275d8"
             : "1px solid #0004",
         borderRadius: "12px",
         height: "fit-content",
-
-        "&:hover": {
-          boxShadow: "0 3px 10px #0004",
-        },
       }}
     >
       <h5 style={{ fontWeight: "bold", marginBottom: "3px" }}>
@@ -169,7 +155,7 @@ const JobList = (props) => {
           <p className="h5">{job.job.Location}</p>
         </div>
         <div className="p-3 align-self-end">
-          <div className="d-flex align-items-center p-3 gap-3">
+          <div className="d-flex align-items-center px-3 gap-3">
             <Button
               className="btn"
               variant="contained"
@@ -206,9 +192,9 @@ const JobList = (props) => {
         </div>
 
         <div>
-          <Typography variant="h6">Description</Typography>
+        <Typography variant="h6">Description</Typography>
 
-          <div
+        <div
             className="my-3 pb-3"
             style={{ borderBottom: "1px solid #0001" }}
           >
@@ -218,7 +204,8 @@ const JobList = (props) => {
 
           <div className="mt-3">
             <Typography>
-              {job.job.job_description_text
+              {job.job.job_description_text}
+              {/* {job.job.job_description_text
                 .split("\n")
                 .map(function (item, idx) {
                   return (
@@ -227,7 +214,7 @@ const JobList = (props) => {
                       <br />
                     </span>
                   );
-                })}
+                })} */}
             </Typography>
           </div>
         </div>
@@ -236,31 +223,11 @@ const JobList = (props) => {
   );
 
   const listing1 = () => (
-    <div className="col-11 mx-auto position-relative vh-100">
-      {/* <img
-        src={svg1}
-        alt={"logo"}
-        style={{ zIndex: "0", opacity: "0.7" }}
-        className="position-absolute top-0 start-0"
-      />
-      <img
-        src={svg2}
-        alt={"logo"}
-        style={{ zIndex: "0", opacity: "0.7" }}
-        className="position-absolute bottom-0 end-0"
-      /> */}
-
+    <div className="col-11 mx-auto vh-100">
       <div className="row">
         <div className="col-4 overflow-auto" style={{ height: "70vh" }}>
           {jobs.map((j, i) => (
-            <JobCard
-              job={j}
-              style={{
-                "&:hover": {
-                  boxShadow: "0 3px 10px #0004",
-                },
-              }}
-            />
+            <JobCard job={j} />
           ))}
         </div>
         <div className="col-8">
@@ -282,8 +249,12 @@ const JobList = (props) => {
       </div>
     </div>
   );
+
+  return (
+    <div className="joblist">
+      {SearchBar()} <hr /> {listing1()}
+    </div>
+  );
 };
 
 export default JobList;
-
-//https://irekommend-ml-utility.ue.r.appspot.com/search-jobs?search_string=${routeParams.job_title}&${routeParams.location}
