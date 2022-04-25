@@ -90,7 +90,10 @@ const Blog = () => {
   );
 
   const filter = () => (
-    <div class="d-flex bd-highlight my-5 filter">
+    <div
+      class="d-flex bd-highlight filter"
+      style={{ margin: "80px 50px 30px 50px" }}
+    >
       <div class="p-2 bd-highlight">All Posts</div>
       <div class="ms-auto p-2 bd-highlight">Something</div>
     </div>
@@ -108,41 +111,29 @@ const Blog = () => {
           />
         </div>
         <div class="s-blog-card-body">
-        <div class="s-blog-tags">
-          <ul>
-            <li>
-              <a href="#">tag1</a>
-            </li>
-            <li>
-              <a href="#">tag2</a>
-            </li>
-            <li>
-              <a href="#">tag3</a>
-            </li>
-            <li>
-              <a href="#">tag4</a>
-            </li>
-          </ul>
-        </div>
+          <div class="s-blog-tags">
+            <ul>
+              <li>
+                <a href="#">tag1</a>
+              </li>
+              <li>
+                <a href="#">tag2</a>
+              </li>
+              <li>
+                <a href="#">tag3</a>
+              </li>
+              <li>
+                <a href="#">tag4</a>
+              </li>
+            </ul>
+          </div>
           <h4>What's new in 2022 Tech</h4>
-          <p>
+          <p style={{marginBottom: 0}} >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
             perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
             atque quidem!
           </p>
-        </div>
-        <div class="s-blog-card-footer">
-          <div class="s-blog-user">
-            <img
-              src="https://i.pravatar.cc/40?img=1"
-              alt="user__image"
-              class="s-blog-user-image"
-            />
-            <div class="s-blog-user-info">
-              <h5>Jane Doe</h5>
-              <small>2h ago</small>
-            </div>
-          </div>
+          <a href="#">Read more ...</a>
         </div>
       </div>
       <div class="s-blog-card">
@@ -155,41 +146,29 @@ const Blog = () => {
           />
         </div>
         <div class="s-blog-card-body">
-        <div class="s-blog-tags">
-          <ul>
-            <li>
-              <a href="#">tag1</a>
-            </li>
-            <li>
-              <a href="#">tag2</a>
-            </li>
-            <li>
-              <a href="#">tag3</a>
-            </li>
-            <li>
-              <a href="#">tag4</a>
-            </li>
-          </ul>
-        </div>
+          <div class="s-blog-tags">
+            <ul>
+              <li>
+                <a href="#">tag1</a>
+              </li>
+              <li>
+                <a href="#">tag2</a>
+              </li>
+              <li>
+                <a href="#">tag3</a>
+              </li>
+              <li>
+                <a href="#">tag4</a>
+              </li>
+            </ul>
+          </div>
           <h4>What's new in 2022 Tech</h4>
-          <p>
+          <p style={{marginBottom: 0}} >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
             perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
             atque quidem!
           </p>
-        </div>
-        <div class="s-blog-card-footer">
-          <div class="s-blog-user">
-            <img
-              src="https://i.pravatar.cc/40?img=1"
-              alt="user__image"
-              class="s-blog-user-image"
-            />
-            <div class="s-blog-user-info">
-              <h5>Jane Doe</h5>
-              <small>2h ago</small>
-            </div>
-          </div>
+          <a href="#">Read more ...</a>
         </div>
       </div>
       <div class="s-blog-card">
@@ -202,41 +181,29 @@ const Blog = () => {
           />
         </div>
         <div class="s-blog-card-body">
-        <div class="s-blog-tags">
-          <ul>
-            <li>
-              <a href="#">tag1</a>
-            </li>
-            <li>
-              <a href="#">tag2</a>
-            </li>
-            <li>
-              <a href="#">tag3</a>
-            </li>
-            <li>
-              <a href="#">tag4</a>
-            </li>
-          </ul>
-        </div>
+          <div class="s-blog-tags">
+            <ul>
+              <li>
+                <a href="#">tag1</a>
+              </li>
+              <li>
+                <a href="#">tag2</a>
+              </li>
+              <li>
+                <a href="#">tag3</a>
+              </li>
+              <li>
+                <a href="#">tag4</a>
+              </li>
+            </ul>
+          </div>
           <h4>What's new in 2022 Tech</h4>
-          <p>
+          <p style={{marginBottom: 0}} >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
             perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
             atque quidem!
           </p>
-        </div>
-        <div class="s-blog-card-footer">
-          <div class="s-blog-user">
-            <img
-              src="https://i.pravatar.cc/40?img=1"
-              alt="user__image"
-              class="s-blog-user-image"
-            />
-            <div class="s-blog-user-info">
-              <h5>Jane Doe</h5>
-              <small>2h ago</small>
-            </div>
-          </div>
+          <a href="#">Read more ...</a>
         </div>
       </div>
       <div class="s-blog-card">
@@ -249,41 +216,29 @@ const Blog = () => {
           />
         </div>
         <div class="s-blog-card-body">
-        <div class="s-blog-tags">
-          <ul>
-            <li>
-              <a href="#">tag1</a>
-            </li>
-            <li>
-              <a href="#">tag2</a>
-            </li>
-            <li>
-              <a href="#">tag3</a>
-            </li>
-            <li>
-              <a href="#">tag4</a>
-            </li>
-          </ul>
-        </div>
+          <div class="s-blog-tags">
+            <ul>
+              <li>
+                <a href="#">tag1</a>
+              </li>
+              <li>
+                <a href="#">tag2</a>
+              </li>
+              <li>
+                <a href="#">tag3</a>
+              </li>
+              <li>
+                <a href="#">tag4</a>
+              </li>
+            </ul>
+          </div>
           <h4>What's new in 2022 Tech</h4>
-          <p>
+          <p style={{marginBottom: 0}} >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
             perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
             atque quidem!
           </p>
-        </div>
-        <div class="s-blog-card-footer">
-          <div class="s-blog-user">
-            <img
-              src="https://i.pravatar.cc/40?img=1"
-              alt="user__image"
-              class="s-blog-user-image"
-            />
-            <div class="s-blog-user-info">
-              <h5>Jane Doe</h5>
-              <small>2h ago</small>
-            </div>
-          </div>
+          <a href="#">Read more ...</a>
         </div>
       </div>
     </div>
@@ -291,9 +246,9 @@ const Blog = () => {
 
   return (
     <div className="blog">
-      <Size>
-        {hero()} {filter()} {other()}
-      </Size>{" "}
+      {/* <Size> */}
+      {filter()} {other()}
+      {/* </Size> */}
     </div>
   );
 };

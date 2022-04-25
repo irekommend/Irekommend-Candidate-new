@@ -1,3 +1,4 @@
+import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
@@ -79,9 +80,10 @@ const JobList = (props) => {
       .then((data) => {
         // console.log(data);
         setJobs(data);
-        // setSelectedJob(data[0]);
+        setSelectedJob(0);
       });
   }, [run]);
+  console.log(selectedJob);
 
   const SearchBar = () => (
     <div
@@ -148,16 +150,27 @@ const JobList = (props) => {
       style={{ fontFamily: "Roboto,sans-serif", height: "70vh" }}
     >
       <div
-        className="d-flex flex-row"
+        className="d-flex flex-row flex-wrap"
         style={{ boxShadow: "0 3px 15px #0002" }}
       >
-        <div className="flex-grow-1 p-3">
+        <CancelOutlinedIcon
+          style={{
+            position: "absolute",
+            top: "10px",
+            right: "10px",
+            color: "#0008",
+            cursor: "pointer",
+            "&:hover": { color: "#000f" },
+          }}
+          onClick={() => setSelectedJob(0)}
+        />
+        <div className="flex-grow-1 p-3" style={{ maxWidth: "420px" }}>
           <h3>{job.job.job_role_title}</h3>
           <p className="h5">{job.job.Company}</p>
           <p className="h5">{job.job.Location}</p>
         </div>
-        <div className="p-3 align-self-end">
-          <div className="d-flex align-items-center px-3 gap-3">
+        <div className="align-self-end">
+          <div className="d-flex align-items-center p-3 gap-3">
             <Button
               className="btn"
               variant="contained"
@@ -259,20 +272,27 @@ const JobList = (props) => {
     </div>
   );
 
+  const listing2 = () => (
+    <div className="">
+      <div className="">
+        {selectedJob.Job_ID === undefined ? (
+          jobs.map((j, i) => <JobCard job={j} />)
+        ) : (
+          <SelectedJobDisplay job={selectedJob} />
+        )}
+      </div>
+    </div>
+  );
+
   return (
     <div className="joblist">
       {SearchBar()}
       <hr />
-      <div>
-        {windowDimensions.width > 800
-          ? listing1()
-          : jobs.map((j, i) => <JobCard job={j} />)}
-      </div>
+      <div>{windowDimensions.width > 800 ? listing1() : listing2()}</div>
     </div>
   );
 };
 
 export default JobList;
-
 
 //https://irekommend-ml-utility.ue.r.appspot.com/search-jobs?search_string=${routeParams.job_title}&${routeParams.location}

@@ -490,7 +490,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin-block: 2rem;
   gap: 2rem;
 }
@@ -504,7 +504,8 @@ body{
 .s-blog-card {
   display: flex;
   flex-direction: column;
-  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  width: clamp(18rem, calc(18rem + 2vw), 18rem);
+  height: fit-content;
   overflow: hidden;
   box-shadow: 4px 4px 2px -2px #0003;
   border-radius: 5px;
@@ -555,8 +556,8 @@ body{
 
 .s-blog-card-footer {
   display: flex;
-  padding: 1rem;
-  margin-top: auto;
+  padding: 0 1rem;
+  /* margin-top: auto; */
 }
 
 .s-blog-user {
