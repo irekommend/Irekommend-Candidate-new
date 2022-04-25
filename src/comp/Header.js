@@ -51,6 +51,9 @@ const Header = () => {
             <Nav.Link href="/learn" className="fs-6 text-dark mx-3">
               Learn
             </Nav.Link>
+            <Nav.Link href="/organization" className="fs-6 text-dark mx-3">
+              For Organization
+            </Nav.Link>
           </Nav>
           <Nav>
             <Button variant="contained" href="/login" className="btn">

@@ -6,7 +6,6 @@ import tcs from "../img/tcs.png";
 import svg3 from "../img/vision.svg";
 
 const About = () => {
-  
   const hero = () => (
     <div className="position-relative vh-100 about-hero">
       <div
@@ -37,14 +36,11 @@ const About = () => {
   const vision = () => (
     <div className="position-relative grey-bg">
       <div className="d-flex flex-row justify-content-center align-items-center flex-wrap ">
-        <div
-          className="mx-auto my-auto text-center w-50"
-          style={{ minWidth: "300px" }}
-        >
+        <div className="mx-auto my-auto text-center w-50">
           <Typography variant="h3" className="fw-bold mt-5">
             Our Vision
           </Typography>
-          <Typography className="fs-5 ">
+          <Typography variant="body1" className="">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia,
             nobis facere recusandae cum necessitatibus velit adipisci nihil fuga
             voluptatibus explicabo quisquam magni quia suscipit exercitationem
@@ -87,7 +83,7 @@ const About = () => {
           <Typography variant="h3" className="fw-bold mt-5">
             Our Mission
           </Typography>
-          <Typography className="fs-5 ">
+          <Typography variant="body1" className="">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia,
             nobis facere recusandae cum necessitatibus velit adipisci nihil fuga
             voluptatibus explicabo quisquam magni quia suscipit exercitationem

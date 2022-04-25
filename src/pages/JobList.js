@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 
 const JobList = (props) => {
   let search = useParams();
+  const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [jobTitle, setJobTitle] = useState("");
   const [selectedJob, setSelectedJob] = useState({});
@@ -72,6 +73,7 @@ const JobList = (props) => {
   // console.log(windowDimensions);
   // ! -----------------------------------
 
+  // ! to fetch data and for loader
   useEffect(() => {
     fetch(
       `https://irekommend-ml-utility.ue.r.appspot.com/search-jobs?search_string=${search.jobtitle}`
@@ -81,6 +83,7 @@ const JobList = (props) => {
         // console.log(data);
         setJobs(data);
         setSelectedJob(0);
+        setLoading(false);
       });
   }, [run]);
   console.log(selectedJob);
@@ -164,7 +167,7 @@ const JobList = (props) => {
           }}
           onClick={() => setSelectedJob(0)}
         />
-        <div className="flex-grow-1 p-3" style={{ maxWidth: "420px" }}>
+        <div className="flex-grow-1 p-3">
           <h3>{job.job.job_role_title}</h3>
           <p className="h5">{job.job.Company}</p>
           <p className="h5">{job.job.Location}</p>
@@ -288,7 +291,19 @@ const JobList = (props) => {
     <div className="joblist">
       {SearchBar()}
       <hr />
-      <div>{windowDimensions.width > 800 ? listing1() : listing2()}</div>
+      {loading ? (
+        <div
+          className="d-flex align-items-center text-center"
+          style={{ height: "70vh" }}
+        >
+          <div
+            className="spinner-grow text-primary mx-auto"
+            style={{ width: "4em", height: "4em" }}
+          ></div>
+        </div>
+      ) : (
+        <div>{windowDimensions.width > 800 ? listing1() : listing2()}</div>
+      )}
     </div>
   );
 };

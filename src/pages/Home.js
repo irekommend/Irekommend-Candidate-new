@@ -75,7 +75,7 @@ const Home = () => {
             className="mx-3 my-3"
             style={{ width: "65vw" }}
           />
-          <SearchButton href={`/search/${jobTitle}`} className="mx-3 my-3">
+          <SearchButton type="submit" href={`/search/${jobTitle}`} className="mx-3 my-3">
             Search
           </SearchButton>
         </div>
@@ -88,11 +88,11 @@ const Home = () => {
             Aws
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2" href="/search/google">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/google%20cloud">
             Google Cloud
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2" href="/search/web">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/web%20development">
             Web Development
           </Button>
 
@@ -100,7 +100,7 @@ const Home = () => {
             Python
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2" href="/search/machine">
+          <Button variant="outlined" className="mx-2 my-2" href="/search/machine%20learning">
             Machine Learning
           </Button>
         </div>
