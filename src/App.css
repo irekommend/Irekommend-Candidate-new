@@ -581,6 +581,23 @@ body{
 }
 
 
+.trd {
+  /* max-width: 90vw; */
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-top: 10vh solid #f2f4f8;
+    width: ;
+}
+
+
+/* ! ----------------------------------------- */
+
+
+
+
+/* ! ----------------------------------------- */
+
+
 /* ! animations */
 @keyframes rise{
   0%{

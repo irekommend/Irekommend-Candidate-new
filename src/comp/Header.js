@@ -33,7 +33,7 @@ const Header = () => {
         }}
         scrolling
       >
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <h3>IRekommend</h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

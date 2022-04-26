@@ -7,8 +7,6 @@ import TextField from "@mui/material/TextField";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-// import svg1 from "../img/job-bg1.svg";
-// import svg2 from "../img/job-bg2.svg";
 
 const JobList = (props) => {
   let search = useParams();

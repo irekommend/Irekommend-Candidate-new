@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1415.4" height="1473.1" version="1.1" viewBox="0 0 374.5 389.76" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(113.25 34.018)">
+  <circle cx="159.51" cy="254" r="91.158" fill="none" stop-color="#000000" stroke="#2affd5" stroke-linecap="round" stroke-linejoin="round" stroke-width="21.167"/>
+  <g transform="translate(30.994 -23.435)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.583">
+   <circle cx="153.46" cy="52.161" r="57.452" stop-color="#000000" stroke="#2a7fff"/>
+   <circle d="M 153.45833,-5.2916489 A 57.452377,57.452377 0 0 1 210.91071,52.160728 57.452377,57.452377 0 0 1 153.45833,109.61311" stop-color="#000000" stroke="#2affd5"/>
+  </g>
+  <g transform="translate(-16.631 -34.018)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="15.875">
+   <circle cx="-17.387" cy="143.63" r="71.296" stop-color="#000000" stroke="#2a7fff"/>
+   <path d="m-17.383 72.335a71.3 71.3 0 0 1 65.872 44.014 71.3 71.3 0 0 1-15.456 77.702 71.3 71.3 0 0 1-77.702 15.456 71.3 71.3 0 0 1-44.014-65.872" stop-color="#000000" stroke="#2affd5"/>
+  </g>
+  <g fill="#000000" font-family="sans-serif">
+   <text x="-74.241997" y="120.09385" font-size="28.222px" font-weight="bold" stroke-width=".36518" style="line-height:1.25" xml:space="preserve"><tspan x="-74.241997" y="120.09385" fill="#000000" font-family="sans-serif" font-size="28.222px" font-weight="bold" stroke-width=".36518">Good</tspan></text>
+   <text x="138.33109" y="36.606873" font-size="21.167px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="138.33109" y="36.606873" font-family="sans-serif" font-size="21.167px" stroke-width=".26458">Potential</tspan></text>
+   <text x="87.270844" y="267.22919" font-size="35.278px" font-weight="bold" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="87.270844" y="267.22919" font-family="sans-serif" font-size="35.278px" font-weight="bold" stroke-width=".26458">Perfect</tspan></text>
+  </g>
+ </g>
+</svg>
