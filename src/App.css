@@ -586,13 +586,15 @@ body{
     border-left: 50vw solid transparent;
     border-right: 50vw solid transparent;
     border-top: 10vh solid #f2f4f8;
-    width: ;
+    /* width: ; */
 }
 
 
 /* ! ----------------------------------------- */
 
-
+.carousel {
+  width: 90vw !important;
+}
 
 
 /* ! ----------------------------------------- */
