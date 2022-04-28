@@ -9,9 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import svg1 from "../img/connecting_teams.svg";
 import svg3 from "../img/logistics.svg";
 
-
 const Org = () => {
-
   const hero = () => (
     <div className="position-relative vh-100 about-hero ">
       <div
@@ -19,7 +17,7 @@ const Org = () => {
         style={{ height: "100%" }}
       >
         <Typography variant="h3" style={{ fontWeight: "bold" }}>
-          Match with experienced developers to get work done quickly.
+        iRekommend  helps you with <span className="text-grad"> efficient recruiting </span>
         </Typography>
 
         <Typography className="mt-3">
@@ -48,10 +46,7 @@ const Org = () => {
       style={{ padding: "80px 0" }}
     >
       <div className="d-flex justify-content-evenly align-items-stretch flex-wrap mx-auto py-3">
-        <Card
-          style={{ width: "18rem" }}
-          className="mx-3 my-3 card-c"
-        >
+        <Card style={{ width: "18rem" }} className="mx-3 my-3 card-c">
           <Card.Body className="d-flex flex-column">
             <Card.Img src={svg1}></Card.Img>
             <Card.Title className="mt-2">Search the network</Card.Title>
@@ -124,9 +119,35 @@ const Org = () => {
     </div>
   );
 
+  const questions = () => (
+    <div className="d-flex flex-column justify-content-center align-items-center py-5 px-3 gap-3 text-white text-center" style={{ background: "linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)", }}>
+      <Typography className="mb-3" variant="h4">
+        Do you have any question?
+      </Typography>
+      <div className="d-flex flex-row gap-2">
+        <Button variant="outlined" style={{ width: "fit-content", color: "#fff", borderColor: "#fff" }}>
+          Call us
+        </Button>
+        <Button variant="outlined" style={{ width: "fit-content", color: "#fff", borderColor: "#fff" }}>
+          Write to us
+        </Button>
+      </div>
+    </div>
+  );
+
+  const custview = () => (
+    <div>
+      <Typography>
+        Customers' view on iRekommend :
+      </Typography>
+    </div>
+  );
+
   return (
     <div className="about">
-      {hero()} {second()}
+      {hero()}
+      {/* {second()} */}
+      {questions()}
     </div>
   );
 };

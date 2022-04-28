@@ -14,6 +14,7 @@ import JobList from "./pages/JobList";
 import Learn from "./pages/Learn";
 import Org from "./pages/Organization";
 import PNF from "./pages/PNF";
+import Emj from "./pages/emj";
 
 const App = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/Signup" element={<Signup />}></Route>
         <Route path="/search/:jobtitle" element={<JobList />}></Route>
         <Route path="*" element={<PNF />}></Route>
+        <Route path="/emj" element={<Emj />}></Route>
       </Routes>
 
       <div style={{ height: "500px" }}>{Footer()}</div>
