@@ -69,13 +69,20 @@ const Home = () => {
             id="outlined-basic"
             label="Search for Jobs"
             onChange={(e) => setJobTitle(e.target.value)}
-            onKeyDown={ (e) => { if ( e.key === 'Enter') {}}}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+              }
+            }}
             value={jobTitle}
             variant="outlined"
             className="mx-3 my-3"
             style={{ width: "65vw" }}
           />
-          <SearchButton type="submit" href={`/search/${jobTitle}`} className="mx-3 my-3">
+          <SearchButton
+            type="submit"
+            href={`/search/${jobTitle}`}
+            className="mx-3 my-3"
+          >
             Search
           </SearchButton>
         </div>
@@ -88,19 +95,35 @@ const Home = () => {
             Aws
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2" href="/search/google%20cloud">
+          <Button
+            variant="outlined"
+            className="mx-2 my-2"
+            href="/search/google%20cloud"
+          >
             Google Cloud
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2" href="/search/web%20development">
+          <Button
+            variant="outlined"
+            className="mx-2 my-2"
+            href="/search/web%20development"
+          >
             Web Development
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2" href="/search/python">
+          <Button
+            variant="outlined"
+            className="mx-2 my-2"
+            href="/search/python"
+          >
             Python
           </Button>
 
-          <Button variant="outlined" className="mx-2 my-2" href="/search/machine%20learning">
+          <Button
+            variant="outlined"
+            className="mx-2 my-2"
+            href="/search/machine%20learning"
+          >
             Machine Learning
           </Button>
         </div>
@@ -384,9 +407,57 @@ const Home = () => {
     </div>
   );
 
+  // const showPopup = Cookies.get("colorboxshown");
+  // const togglePopup = () => (showPopup = !showPopup);
+
+  // const closePopup = () => (
+  //   $.colorbox.close()
+  // );
+
+  // const popup = ({ text, closePopup }) => (
+  //   <div className="popup">
+  //     <div className="popup_inner">
+  //       <h1>{text}</h1>
+  //       <button onClick={closePopup}>close me</button>
+  //     </div>
+  //   </div>
+  // );
+
+  // $(".order-cheezburger").on("click", function() {
+  //   $.colorbox.close();
+  // });
+  
+  // function onPopupOpen() {
+  //   $("#modal-content").show();
+  // }
+  
+  // function onPopupClose() {
+  //   $("#modal-content").hide();
+  //   Cookies.set('colorboxShown', 'yes', {
+  //     expires: 1
+  //   });
+  // }
+
+  // const displayPopup = () => (
+  //   $.colorbox({
+  //     inline: true,
+  //     href: "#modal-content",
+  //     className: "cta",
+  //     width: 600,
+  //     height: 350,
+  //     onComplete: onPopupOpen,
+  //     onClosed: onPopupClose
+  //   })
+  // );
+
   return (
     <div className="home white-bg" style={{ zIndex: 1 }}>
-      {hero()} {cards()} {sec2()} {skewDiv()} {growing()}
+      {hero()} {cards()} {sec2()} {skewDiv()} {growing()}{" "}
+      {/* {showPopup
+        ? null
+        : setTimeout(function () {
+            displayPopup();
+          }, 2000)} */}
     </div>
   );
 };

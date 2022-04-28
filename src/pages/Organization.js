@@ -277,7 +277,7 @@ const Org = () => {
       style={{ background: "linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)" }}
     >
       <Typography className="mb-3" variant="h4">
-        Do you have any question?
+        Book your demo
       </Typography>
       <div className="d-flex flex-row gap-2">
         <Button
