@@ -8,6 +8,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import svg1 from "../img/connecting_teams.svg";
 import svg3 from "../img/logistics.svg";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Org = () => {
   const hero = () => (
@@ -180,7 +181,7 @@ const Org = () => {
           <img
             src={svg1}
             alt={"logo"}
-            style={{ width: "100%", maxHeight: "500px" }}
+            style={{ width: "100%", maxHeight: "400px" }}
             className=" my-5 py-5"
           />
         </div>
@@ -211,9 +212,10 @@ const Org = () => {
             </Card.Text>
             <div className="d-flex flex-row align-items-center">
               <Card.Title className="flex-grow-1 mt-2">
-                ABC <br /> xyz company
+                Michel Scott
+                <Typography variant="body2">Dunder Mufflin</Typography>
               </Card.Title>
-              <p>icon</p>
+              <AccountCircleIcon fontSize="large"/>
             </div>
           </Card.Body>
         </Card>
@@ -221,33 +223,14 @@ const Org = () => {
           <Card.Body className="d-flex flex-column">
             <Card.Text className="flex-grow-1" style={{ textAlign: "justify" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              sequi quis rerum ipsum, consequuntur minima possimus architecto
-              voluptatem placeat dolore? Qui porro amet autem voluptate neque
-              beatae incidunt optio fugiat. Lorem ipsum dolor, sit amet
-              consectetur adipisicing elit. Mollitia similique eveniet, numquam
-              beatae temporibus doloremque.
+              sequi quis rerum.
             </Card.Text>
             <div className="d-flex flex-row align-items-center">
               <Card.Title className="flex-grow-1 mt-2">
-                ABC <br /> xyz company
+                Ram Raghuvanshi
+                <Typography variant="body2">ARMORG</Typography>
               </Card.Title>
-              <p>icon</p>
-            </div>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: "18rem" }} className="mx-3 my-3 card-c">
-          <Card.Body className="d-flex flex-column">
-            <Card.Text className="flex-grow-1" style={{ textAlign: "justify" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              sequi quis rerum ipsum, consequuntur minima possimus architecto
-              voluptatem placeat dolore? Qui porro amet autem voluptate neque
-              beatae incidunt optio fugiat.
-            </Card.Text>
-            <div className="d-flex flex-row align-items-center">
-              <Card.Title className="flex-grow-1 mt-2">
-                ABC <br /> xyz company
-              </Card.Title>
-              <p>icon</p>
+              <AccountCircleIcon fontSize="large"/>
             </div>
           </Card.Body>
         </Card>
@@ -261,9 +244,10 @@ const Org = () => {
             </Card.Text>
             <div className="d-flex flex-row align-items-center">
               <Card.Title className="flex-grow-1 mt-2">
-                ABC <br /> xyz company
+                Adrie sghud
+                <Typography variant="body2">Sjik limited</Typography>
               </Card.Title>
-              <p>icon</p>
+              <AccountCircleIcon fontSize="large"/>
             </div>
           </Card.Body>
         </Card>

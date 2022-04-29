@@ -52,7 +52,7 @@ const About = () => {
           <img
             src={svg3}
             alt={"vision"}
-            style={{ width: "100%", maxHeight: "500px" }}
+            style={{ width: "100%", maxHeight: "475px" }}
             className=" my-5 py-5"
             data-aos="zoom-in"
             data-aos-once="true"
