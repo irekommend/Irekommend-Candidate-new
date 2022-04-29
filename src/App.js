@@ -21,13 +21,15 @@ import Org from "./pages/Organization";
 import PNF from "./pages/PNF";
 import Button from "@mui/material/Button";
 
-
 const App = () => {
   const [show, setShow] = useState(false);
-
+  // const [used, setUsed] = useState(false);
+  // const dis = false;
+  
   useEffect(() => {
     setTimeout(() => {
       setShow(true);
+      // setUsed(true);
       document.body.style.pointerEvents = "none";
       document.getElementById("modal").style.pointerEvents = "auto";
     }, 5000);
@@ -56,24 +58,38 @@ const App = () => {
               id="modal-content"
               className="d-flex flex-column align-items-center justify-content-center position-relative p-5 text-center"
               elevation={12}
+              style={{
+                background: "linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)",
+              }}
             >
               <IconButton
                 aria-label="delete"
                 size="large"
-                color="error"
                 className="position-absolute top-0 end-0"
                 onClick={() => {
                   setShow(false);
                   document.body.style.pointerEvents = "auto";
                   document.getElementById("modal").style.pointerEvents = "none";
                 }}
+                style={{ color: "#ffff", borderColor: "#ffff" }}
               >
                 <CancelOutlinedIcon fontSize="inherit" />
               </IconButton>
               <Typography variant="h4">
-                Upload your Resume now, and get your first interview call in <span className="text-grad" style={{fontWeight: "bold"}}>14 DAYS</span>. 
+                Upload your Resume now, and get your first interview call in{" "}
+                <span style={{ fontWeight: "bold", color: "white" }}>
+                  14 DAYS
+                </span>
+                .
               </Typography>
-              <Button className="mt-5" variant="outlined" size="large">Upload your Resume</Button>
+              <Button
+                className="mt-5"
+                variant="outlined"
+                size="large"
+                style={{ color: "#ffff", borderColor: "#ffff" }}
+              >
+                Upload your Resume
+              </Button>
             </Paper>
           </div>
         </div>
