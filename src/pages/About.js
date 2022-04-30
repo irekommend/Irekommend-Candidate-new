@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import svg4 from "../img/mission.svg";
 import tcs from "../img/tcs.png";
 import svg3 from "../img/vision.svg";
+import svb from "../img/svb.png"
 
 const About = () => {
   const hero = () => (
@@ -182,9 +183,9 @@ const About = () => {
       <div class="mx-5 my-5">
         <div class="d-flex flex-wrap justify-content-evenly align-items-center">
           <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
+          <img src={svb} alt={"SVB"} style={{ width: "100px" }} />
           <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
-          <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
-          <img src={tcs} alt={"TCS"} style={{ width: "100px" }} />
+          <img src={svb} alt={"SVB"} style={{ width: "100px" }} />
         </div>
       </div>
     </div>
