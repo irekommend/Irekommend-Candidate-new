@@ -7,7 +7,7 @@ import { blue, green, orange, red } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import CountUp from "react-countup";
 import svg1 from "../img/back.svg";
@@ -426,11 +426,11 @@ const Home = () => {
   // $(".order-cheezburger").on("click", function() {
   //   $.colorbox.close();
   // });
-  
+
   // function onPopupOpen() {
   //   $("#modal-content").show();
   // }
-  
+
   // function onPopupClose() {
   //   $("#modal-content").hide();
   //   Cookies.set('colorboxShown', 'yes', {

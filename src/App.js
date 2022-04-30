@@ -21,79 +21,100 @@ import Org from "./pages/Organization";
 import PNF from "./pages/PNF";
 import Button from "@mui/material/Button";
 
+import Fab from "@mui/material/Fab";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Cookies from "universal-cookie";
+import { styled } from "@mui/material/styles";
+
+
 const App = () => {
-  const [show, setShow] = useState(false);
-  // const [used, setUsed] = useState(false);
-  // const dis = false;
-  
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(true);
-      // setUsed(true);
-      document.body.style.pointerEvents = "none";
-      document.getElementById("modal").style.pointerEvents = "auto";
-    }, 5000);
-  }, []);
-  // setShow(true);
 
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const cookies = new Cookies();
+
+  useEffect(() => {
+    if (cookies.get("modal") != "true") {
+      setTimeout(() => {
+        setOpen(true);
+        // setUsed(true);
+        document.getElementById("modal").style.pointerEvents = "auto";
+        cookies.set("modal", "true", { path: "/" });
+      }, 5000);
+    }
+  }, []);
+
+  const Input = styled("input")({
+    display: "none",
+  });
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    border: "none",
+    width: "20rem",
+    boxShadow: 24,
+    p: 4,
+    backgroundColor: "white",
+  };
+
+  const modal = () => (
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+      id="modal"
+    >
+      <Box
+        className="d-flex flex-column justify-content-center align-items-center text-center"
+        sx={style}
+      >
+        <Typography variant="h5">
+          Upload your Resume now, and get your first interview call in{" "}
+          <span className="text-grad" style={{ fontWeight: "bold" }}>
+            14 DAYS
+          </span>
+          .
+        </Typography>
+        <label className="mt-4" htmlFor="contained-button-file">
+          <Input
+            accept="image/*"
+            id="contained-button-file"
+            multiple
+            type="file"
+          />
+          <Button variant="contained" component="span">
+            Upload
+          </Button>
+        </label>
+      </Box>
+    </Modal>
+  );
+
+
+  const notification = () => (
+    <Fab id="fixedbell" color="primary" aria-label="" onClick={handleOpen}>
+      <NotificationsActiveIcon />
+    </Fab>
+  );
+
   return (
-    <div>
-      {show ? (
-        <div id="modal">
-          <div
-            className="d-flex justify-content-center align-items-center"
-            style={{
-              width: "100vw",
-              height: "100vh",
-              backgroundColor: "#0004",
-              zIndex: "10",
-            }}
-          >
-            <Paper
-              id="modal-content"
-              className="d-flex flex-column align-items-center justify-content-center position-relative p-5 text-center"
-              elevation={12}
-              style={{
-                background: "linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)",
-              }}
-            >
-              <IconButton
-                aria-label="delete"
-                size="large"
-                className="position-absolute top-0 end-0"
-                onClick={() => {
-                  setShow(false);
-                  document.body.style.pointerEvents = "auto";
-                  document.getElementById("modal").style.pointerEvents = "none";
-                }}
-                style={{ color: "#ffff", borderColor: "#ffff" }}
-              >
-                <CancelOutlinedIcon fontSize="inherit" />
-              </IconButton>
-              <Typography variant="h4">
-                Upload your Resume now, and get your first interview call in{" "}
-                <span style={{ fontWeight: "bold", color: "white" }}>
-                  14 DAYS
-                </span>
-                .
-              </Typography>
-              <Button
-                className="mt-5"
-                variant="outlined"
-                size="large"
-                style={{ color: "#ffff", borderColor: "#ffff" }}
-              >
-                Upload your Resume
-              </Button>
-            </Paper>
-          </div>
-        </div>
-      ) : null}
+    <div className="new-app">
+      {modal()}
+
+      { notification() }
 
       {Header()}
 
@@ -109,6 +130,7 @@ const App = () => {
         <Route path="*" element={<PNF />}></Route>
         <Route path="/emj" element={<Emj />}></Route>
       </Routes>
+
 
       <div style={{ height: "500px" }}>{Footer()}</div>
     </div>
