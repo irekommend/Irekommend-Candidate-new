@@ -20,6 +20,10 @@ import Learn from "./pages/Learn";
 import Org from "./pages/Organization";
 import PNF from "./pages/PNF";
 import Button from "@mui/material/Button";
+import Blog1 from "./pages/Blogs/Blog1.js";
+import Blog2 from "./pages/Blogs/Blog2.js";
+import Blog3 from "./pages/Blogs/Blog3.js";
+import Blog4 from "./pages/Blogs/Blog4.js";
 
 import Fab from "@mui/material/Fab";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
@@ -121,6 +125,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/blog/1" element={<Blog1 />}></Route>
+        <Route path="/blog/2" element={<Blog2 />}></Route>
+        <Route path="/blog/3" element={<Blog3 />}></Route>
+        <Route path="/blog/4" element={<Blog4 />}></Route>
         <Route path="/about" element={<About />}></Route>
         {/* <Route path="/learn" element={<Learn />}></Route> */}
         <Route path="/login" element={<Login />}></Route>

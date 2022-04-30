@@ -5,6 +5,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import '../css/blog.css';
+import Button from "@mui/material/Button";
 
 import { styled } from "@mui/material/styles";
 
@@ -101,11 +102,11 @@ const Blog = () => {
   );
 
   const other = () => (
-    <div class="s-blog-container">
+    <div class="d-flex flex-row flex-wrap justify-content-center align-items-stretch s-blog-container">
       <div class="s-blog-card">
         <div class="s-blog-card-header">
           <img
-            src="https://source.unsplash.com/600x400/?computer"
+            src="/images/blog_1.png"
             alt="card__image"
             class="card__image"
             width="600"
@@ -129,18 +130,13 @@ const Blog = () => {
             </ul>
           </div>
           <h4>What's new in 2022 Tech</h4>
-          <p style={{marginBottom: 0}} >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
-            atque quidem!
-          </p>
-          <a href="#">Read more ...</a>
+          <Button variant="contained" href="/blog/1">Read more ...</Button>
         </div>
       </div>
       <div class="s-blog-card">
         <div class="s-blog-card-header">
           <img
-            src="https://source.unsplash.com/600x400/?computer"
+            src="/images/blog_2.png"
             alt="card__image"
             class="card__image"
             width="600"
@@ -164,18 +160,13 @@ const Blog = () => {
             </ul>
           </div>
           <h4>What's new in 2022 Tech</h4>
-          <p style={{marginBottom: 0}} >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
-            atque quidem!
-          </p>
-          <a href="#">Read more ...</a>
+          <Button variant="contained" href="/blog/2">Read more ...</Button>
         </div>
       </div>
       <div class="s-blog-card">
         <div class="s-blog-card-header">
           <img
-            src="https://source.unsplash.com/600x400/?computer"
+            src="/images/blog_3.png"
             alt="card__image"
             class="card__image"
             width="600"
@@ -199,18 +190,13 @@ const Blog = () => {
             </ul>
           </div>
           <h4>What's new in 2022 Tech</h4>
-          <p style={{marginBottom: 0}} >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
-            atque quidem!
-          </p>
-          <a href="#">Read more ...</a>
+          <Button variant="contained" href="/blog/3">Read more ...</Button>
         </div>
       </div>
       <div class="s-blog-card">
         <div class="s-blog-card-header">
           <img
-            src="https://source.unsplash.com/600x400/?computer"
+            src="/images/blog_4.png"
             alt="card__image"
             class="card__image"
             width="600"
@@ -234,12 +220,7 @@ const Blog = () => {
             </ul>
           </div>
           <h4>What's new in 2022 Tech</h4>
-          <p style={{marginBottom: 0}} >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea
-            atque quidem!
-          </p>
-          <a href="#">Read more ...</a>
+          <Button variant="contained" href="/blog/4">Read more ...</Button>
         </div>
       </div>
     </div>
