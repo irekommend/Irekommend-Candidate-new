@@ -24,6 +24,11 @@ body{
   color: #37c871 !important;
 }
 
+.for-toggled-nav {
+  background-color: #fff !important;
+  padding: 10px !important;
+}
+
 
 /* ! text gradient */
   .text-grad{
@@ -507,9 +512,9 @@ body{
   width: clamp(18rem, calc(18rem + 2vw), 18rem);
   height: fit-content;
   overflow: hidden;
-  box-shadow: 4px 4px 2px -2px #0003;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 5px;
-  background: #f2f4f888;
+  background: #fff8;
 }
 
 .s-blog-card-body {

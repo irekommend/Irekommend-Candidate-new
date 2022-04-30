@@ -36,8 +36,8 @@ const Header = () => {
         <Navbar.Brand href="/">
           <h3>IRekommend</h3>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+        <Navbar.Collapse id="responsive-navbar-nav" className="for-toggled-nav">
           <Nav className="mx-auto">
             <Nav.Link href="/about" className="fs-6 text-dark mx-3">
               About
