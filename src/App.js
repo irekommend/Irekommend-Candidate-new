@@ -31,10 +31,9 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Cookies from "universal-cookie";
 import { styled } from "@mui/material/styles";
-
+import CookieConsent from "react-cookie-consent";
 
 const App = () => {
-
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -107,7 +106,6 @@ const App = () => {
     </Modal>
   );
 
-
   const notification = () => (
     <Fab id="fixedbell" color="primary" aria-label="" onClick={handleOpen}>
       <NotificationsActiveIcon />
@@ -117,8 +115,18 @@ const App = () => {
   return (
     <div className="new-app">
       {modal()}
+      <CookieConsent
+        location="bottom"
+        buttonText="I understand"
+        cookieName="myAwesomeCookieName2"
+        style={{ textAlign: "center", background: "#2B373B", zIndex: "50" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        expires={150}
+      >
+        This website uses cookies. See our <a href="#">Privacy Policy</a> for more.
+      </CookieConsent>
 
-      { notification() }
+      {notification()}
 
       {Header()}
 
@@ -138,7 +146,6 @@ const App = () => {
         <Route path="*" element={<PNF />}></Route>
         <Route path="/emj" element={<Emj />}></Route>
       </Routes>
-
 
       <div style={{ height: "500px" }}>{Footer()}</div>
     </div>
