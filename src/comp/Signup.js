@@ -16,12 +16,14 @@ import Form from "react-bootstrap/Form";
 // import { registerWithEmailAndPassword } from "../service/firebase.js";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
-import storage from "../service/firebase.js";
+import { useState } from "react";
+import "firebase/compat/storage"
 
 const theme = createTheme();
 
 export default function SignUp() {
+  var firestore = firebase.firestore();
+  const [progresspercent, setProgresspercent] = useState(0);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -35,65 +37,20 @@ export default function SignUp() {
     const password = data.get("password");
     const resume = data.get("resume");
     const marketing_concent = data.get("marketing_concent");
-    console.log({
-      fname: fname,
-      lname: lname,
-      contact: contact,
-      country: country,
-      work: work,
-      pref: pref,
-      resume: resume,
-    });
-    register(
-      fname,
-      lname,
-      contact,
-      country,
-      work,
-      pref,
-      email,
-      password,
-      resume,
-      marketing_concent
-    );
-  };
+    console.log("doc is ",document.getElementById("resume").value);
 
-  var firestore = firebase.firestore();
 
-  const register = (
-    fname,
-    lname,
-    contact,
-    country,
-    work,
-    pref,
-    email,
-    password,
-    resume,
-    marketing_concent
-  ) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((registeredUser) => {
         console.log(registeredUser);
-        if (resume != null) {
-          const resume_ref = ref(
-            storage,
-            `/resumes/${resume.name}`
-          );
-
-          const uploadTask = uploadBytesResumable(resume_ref, resume);
-          uploadTask.on(
-            "state_changed",
-            (snapshot) => {
-              const prog = Math.round(
-                (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-              );
-            },
-            (error) => console.log(error),
-            
-          );
+         console.log(resume.file);
+        if(resume){
+          var storageRef = firebase.storage().ref("resumes").child(resume.name);
+          storageRef.put(resume).then(() => {
+            console.log("Uploaded a blob or file!");
+          });
         }
         firestore.collection("usersCollection").add({
           uid: registeredUser.user.uid,
@@ -108,7 +65,6 @@ export default function SignUp() {
         });
       });
   };
-
   const Signup = () => (
     <ThemeProvider theme={theme}>
       <div className="d-flex h-100">
@@ -237,7 +193,7 @@ export default function SignUp() {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Form.Group controlId="formFile" className="mb-3">
+                  <Form.Group  className="mb-3">
                     <Form.Label className="px-3">Upload your Resume</Form.Label>
                     <Form.Control
                       type="file"
