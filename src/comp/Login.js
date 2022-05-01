@@ -15,18 +15,22 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import google from "../img/google-logo.png";
+import useAuth from "../hooks/useAuth";
+import { CoPresentSharp } from "@mui/icons-material";
+import { useNavigate , useLocation } from "react-router-dom";
 
 
 const theme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
+export default  function SignIn() {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get("email"),
       password: data.get("password"),
     });
+    await login(data.get("email"), data.get("password"), "Candidate");
   };
 
   // Custom Button
@@ -54,6 +58,12 @@ export default function SignIn() {
       color: theme.palette.getContrastText(theme.palette.primary.main),
     },
   }));
+
+  const { method, login , isAuthenticated, user,
+  loginWithGoogle, loginWithFaceBook, loginWithTwitter , logout} = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
 
   const Login = () => (
     <ThemeProvider theme={theme}>
@@ -86,12 +96,20 @@ export default function SignIn() {
             {/* Google and LinkedIn Login box */}
             <Box className="w-100">
               <Box className="d-flex flex-column justify-content-around mt-4 log-buttons">
-                <GoogleButton>
+                <GoogleButton onClick={async()=>{ 
+                                      console.log('before signin with google')
+                                      await loginWithGoogle()
+                                      console.log('after signin with google' + user.displayName)
+                                      setTimeout(() => {
+                                        navigate(-1)
+                                      }, 3000); 
+                                      }}>
                   <GoogleIcon
                     // color="error"
                     fontSize="large"
                     // sx={{ "GoogleButton:hover": { color: "white" } }}
                     style={{ marginRight: "5px" }}
+                    
                   />
                   Sign in with Google
                 </GoogleButton>
@@ -183,5 +201,57 @@ export default function SignIn() {
     </ThemeProvider>
   );
 
-  return <div className="login">{Login()}</div>;
+    const LogOut = () => (
+    <ThemeProvider theme={theme}>
+      <div className="d-flex vh-100">
+        <Container
+          component="main"
+          maxWidth="xs"
+          style={{ margin: "auto auto" }}
+        >
+          <CssBaseline />
+          <Box
+            sx={{
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography
+              component="h1"
+              variant="h5"
+              style={{ fontWeight: "bold" }}
+            >
+              Log Out
+            </Typography>
+
+            <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+                onClick={async()=>{ 
+                                      console.log('before logout')
+                                      await logout()
+                                      console.log('after logout')
+                                     // navigate(-1)
+                                      }}
+              >
+                Log Out
+              </Button>
+
+          </Box>
+        </Container>
+      </div>
+    </ThemeProvider>
+  );
+
+  return <div className="login">
+    {!user.displayName && Login()}
+    {user.displayName && <div>{LogOut()}</div>}
+  </div>;
 }

@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button";
 import React, { useEffect, useRef, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import useAuth from "../hooks/useAuth";
 
 const Header = () => {
   const [navBackground, setNavBackground] = useState(false);
@@ -18,6 +19,9 @@ const Header = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+    const { method, login , isAuthenticated, user,
+  loginWithGoogle, loginWithFaceBook, loginWithTwitter , logout} = useAuth();
 
   const headd = () => (
     <div>
@@ -57,7 +61,7 @@ const Header = () => {
           </Nav>
           <Nav>
             <Button variant="contained" href="/login" className="btn">
-              Log in
+              {user.displayName ? 'Log Out': 'Log In' }
             </Button>
           </Nav>
         </Navbar.Collapse>
