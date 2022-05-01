@@ -15,6 +15,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import google from "../img/google-logo.png";
+import { signInWithGoogle } from '../service/firebase.js';
 
 
 const theme = createTheme();
@@ -86,7 +87,7 @@ export default function SignIn() {
             {/* Google and LinkedIn Login box */}
             <Box className="w-100">
               <Box className="d-flex flex-column justify-content-around mt-4 log-buttons">
-                <GoogleButton>
+                <GoogleButton onClick={signInWithGoogle}>
                   <GoogleIcon
                     // color="error"
                     fontSize="large"

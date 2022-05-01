@@ -12,6 +12,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import Form from "react-bootstrap/Form";
 
 const theme = createTheme();
 
@@ -27,7 +28,7 @@ export default function SignUp() {
 
   const Signup = () => (
     <ThemeProvider theme={theme}>
-      <div className="d-flex vh-100">
+      <div className="d-flex h-100">
         <Container
           component="main"
           maxWidth="xs"
@@ -92,6 +93,46 @@ export default function SignUp() {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    // required
+                    fullWidth
+                    id="contact"
+                    label="Contact Number"
+                    name="contact"
+                    autoComplete="tel"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="country"
+                    label="Country of Residence"
+                    name="country"
+                    autoComplete="country-name"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="work"
+                    label="Work Authorization"
+                    name="work"
+                    // autoComplete="work"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    // required
+                    fullWidth
+                    id="preference"
+                    label="Desired Job Preference"
+                    name="preference"
+                    // autoComplete="preference"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
                     required
                     fullWidth
                     name="password"
@@ -100,6 +141,36 @@ export default function SignUp() {
                     id="password"
                     autoComplete="new-password"
                   />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="confirm-pwd"
+                    label="Confirm Password"
+                    type="password"
+                    id="confirm-pwd"
+                    // autoComplete="confirm-pwd"
+                  />
+                </Grid>
+                {/* <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="resume"
+                    label="Upload your Resume"
+                    type="file"
+                    id="resume"
+                    multiline
+                    rows={3}
+                    // autoComplete="confirm-pwd"
+                  />
+                </Grid> */}
+                <Grid item xs={12}>
+                  <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label className="px-3">Upload your Resume *</Form.Label>
+                    <Form.Control required type="file" size="lg" />
+                  </Form.Group>
                 </Grid>
                 <Grid item xs={12}>
                   <FormControlLabel

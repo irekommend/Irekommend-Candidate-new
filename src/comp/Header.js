@@ -2,7 +2,12 @@ import Button from "@mui/material/Button";
 import React, { useEffect, useRef, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 
-const Header = () => {
+const Header = (props) => {
+
+  const user = props;
+  console.log("in header");
+  console.log(user);
+
   const [navBackground, setNavBackground] = useState(false);
   const navRef = useRef();
   navRef.current = navBackground;
@@ -34,7 +39,7 @@ const Header = () => {
         scrolling
       >
         <Navbar.Brand href="/">
-          <h3>IRekommend</h3>
+          <h3>iRekommend</h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
         <Navbar.Collapse id="responsive-navbar-nav" className="for-toggled-nav">

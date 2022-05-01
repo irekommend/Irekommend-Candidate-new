@@ -32,8 +32,20 @@ import Modal from "@mui/material/Modal";
 import Cookies from "universal-cookie";
 import { styled } from "@mui/material/styles";
 import CookieConsent from "react-cookie-consent";
+import firebase from "./service/firebase.js";
 
 const App = () => {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(user => {
+      setUser(user);
+    })
+  }, [])
+
+  console.log(user);
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -128,7 +140,7 @@ const App = () => {
 
       {notification()}
 
-      {Header()}
+      {Header(user)}
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
