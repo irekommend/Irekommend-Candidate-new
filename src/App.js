@@ -140,7 +140,7 @@ const App = () => {
 
       {notification()}
 
-      {Header(user)}
+      {<Header user={user} />}
 
       <Routes>
         <Route path="/" element={<Home />}></Route>

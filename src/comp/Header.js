@@ -1,10 +1,11 @@
 import Button from "@mui/material/Button";
 import React, { useEffect, useRef, useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, DropdownButton, Dropdown } from "react-bootstrap";
+import firebase from "../service/firebase.js";
+import {useNavigate} from "react-router-dom";
 
 const Header = (props) => {
-
-  const user = props;
+  const user = props.user;
   console.log("in header");
   console.log(user);
 
@@ -24,6 +25,18 @@ const Header = (props) => {
     };
   }, []);
 
+  let navigate = useNavigate();
+
+  function signout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        user = null;
+      });
+    navigate("/");
+  }
+
   const headd = () => (
     <div>
       <Navbar
@@ -41,7 +54,7 @@ const Header = (props) => {
         <Navbar.Brand href="/">
           <h3>iRekommend</h3>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="for-toggled-nav">
           <Nav className="mx-auto">
             <Nav.Link href="/about" className="fs-6 text-dark mx-3">
@@ -58,9 +71,20 @@ const Header = (props) => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Button variant="contained" href="/login" className="btn">
-              Log in
-            </Button>
+            {user == undefined ? (
+              <Button variant="contained" href="/login" className="btn">
+                Log in
+              </Button>
+            ) : (
+              <DropdownButton
+                id="dropdown-basic-button"
+                title={"Hello " + user.displayName}
+                align="end"
+              >
+                <Dropdown.Item href="#/action-1">Dashboard</Dropdown.Item>
+                <Dropdown.Item onClick={() => signout()}>Logout</Dropdown.Item>
+              </DropdownButton>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

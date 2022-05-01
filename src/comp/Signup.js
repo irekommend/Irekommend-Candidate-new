@@ -13,6 +13,11 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import Form from "react-bootstrap/Form";
+// import { registerWithEmailAndPassword } from "../service/firebase.js";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
+import storage from "../service/firebase.js";
 
 const theme = createTheme();
 
@@ -20,10 +25,88 @@ export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const fname = data.get("firstName");
+    const lname = data.get("lastName");
+    const contact = data.get("contact");
+    const country = data.get("country");
+    const work = data.get("work");
+    const pref = data.get("preference");
+    const email = data.get("email");
+    const password = data.get("password");
+    const resume = data.get("resume");
+    const marketing_concent = data.get("marketing_concent");
     console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+      fname: fname,
+      lname: lname,
+      contact: contact,
+      country: country,
+      work: work,
+      pref: pref,
+      resume: resume,
     });
+    register(
+      fname,
+      lname,
+      contact,
+      country,
+      work,
+      pref,
+      email,
+      password,
+      resume,
+      marketing_concent
+    );
+  };
+
+  var firestore = firebase.firestore();
+
+  const register = (
+    fname,
+    lname,
+    contact,
+    country,
+    work,
+    pref,
+    email,
+    password,
+    resume,
+    marketing_concent
+  ) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((registeredUser) => {
+        console.log(registeredUser);
+        if (resume != null) {
+          const resume_ref = ref(
+            storage,
+            `/resumes/${resume.name}`
+          );
+
+          const uploadTask = uploadBytesResumable(resume_ref, resume);
+          uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+              const prog = Math.round(
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+              );
+            },
+            (error) => console.log(error),
+            
+          );
+        }
+        firestore.collection("usersCollection").add({
+          uid: registeredUser.user.uid,
+          fname: fname,
+          lname: lname,
+          contact: contact,
+          country: country,
+          work: work,
+          pref: pref,
+          marketing_concent: marketing_concent,
+          resume: "resumes/" + resume.name,
+        });
+      });
   };
 
   const Signup = () => (
@@ -153,29 +236,26 @@ export default function SignUp() {
                     // autoComplete="confirm-pwd"
                   />
                 </Grid>
-                {/* <Grid item xs={12}>
-                  <TextField
-                    required
-                    fullWidth
-                    name="resume"
-                    label="Upload your Resume"
-                    type="file"
-                    id="resume"
-                    multiline
-                    rows={3}
-                    // autoComplete="confirm-pwd"
-                  />
-                </Grid> */}
                 <Grid item xs={12}>
                   <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label className="px-3">Upload your Resume *</Form.Label>
-                    <Form.Control required type="file" size="lg" />
+                    <Form.Label className="px-3">Upload your Resume</Form.Label>
+                    <Form.Control
+                      type="file"
+                      size="lg"
+                      name="resume"
+                      id="resume"
+                    />
                   </Form.Group>
                 </Grid>
                 <Grid item xs={12}>
                   <FormControlLabel
                     control={
-                      <Checkbox value="allowExtraEmails" color="primary" />
+                      <Checkbox
+                        value="allowExtraEmails"
+                        id="marketing_concent"
+                        name="marketing_concent"
+                        color="primary"
+                      />
                     }
                     label="I want to receive inspiration, marketing promotions and updates via email."
                   />

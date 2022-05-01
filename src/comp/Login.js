@@ -13,10 +13,10 @@ import Link from "@mui/material/Link";
 import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 import * as React from "react";
-import google from "../img/google-logo.png";
-import { signInWithGoogle } from '../service/firebase.js';
-
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
@@ -56,6 +56,18 @@ export default function SignIn() {
     },
   }));
 
+  let navigate = useNavigate();
+
+  const google_signin = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
+
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((data) => navigate("/"));
+  };
+
   const Login = () => (
     <ThemeProvider theme={theme}>
       <div className="d-flex vh-100">
@@ -87,7 +99,7 @@ export default function SignIn() {
             {/* Google and LinkedIn Login box */}
             <Box className="w-100">
               <Box className="d-flex flex-column justify-content-around mt-4 log-buttons">
-                <GoogleButton onClick={signInWithGoogle}>
+                <GoogleButton onClick={() => google_signin()}>
                   <GoogleIcon
                     // color="error"
                     fontSize="large"
