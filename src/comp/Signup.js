@@ -20,10 +20,11 @@ import { useState } from "react";
 import "firebase/compat/storage"
 import { useNavigate } from "react-router-dom";
 
-
 const theme = createTheme();
 
 export default function SignUp() {
+  let navigate = useNavigate();
+
   var firestore = firebase.firestore();
   const [progresspercent, setProgresspercent] = useState(0);
   const handleSubmit = (event) => {
@@ -40,7 +41,6 @@ export default function SignUp() {
     const resume = data.get("resume");
     const marketing_concent = data.get("marketing_concent");
     console.log("doc is ",document.getElementById("resume").value);
-
 
     firebase
       .auth()
