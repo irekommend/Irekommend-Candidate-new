@@ -18,6 +18,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { useState } from "react";
 import "firebase/compat/storage"
+import { useNavigate } from "react-router-dom";
+
 
 const theme = createTheme();
 
@@ -50,6 +52,7 @@ export default function SignUp() {
           var storageRef = firebase.storage().ref("resumes").child(resume.name);
           storageRef.put(resume).then(() => {
             console.log("Uploaded a blob or file!");
+            navigate("/")
           });
         }
         firestore.collection("usersCollection").add({
