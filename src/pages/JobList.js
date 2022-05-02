@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const JobList = (props) => {
@@ -17,7 +18,12 @@ const JobList = (props) => {
   const [run, setRun] = useState(false);
   // console.log(selectedJob.Job_ID);
 
+  const user = props.user;
+
   const today = Date();
+
+  let navigate = useNavigate();
+
 
   // ! to get x in "Posted x days ago"
   const getDays = (d) => {
@@ -178,7 +184,13 @@ const JobList = (props) => {
               size="large"
               style={{ maxWidth: "fit-content", height: "fit-content" }}
               // to open a link in new tab
-              onClick={() => window.open(job.job.Apply_Link, "_blank")}
+              onClick={() => {
+                console.log(job.job.Job_link);
+                if (user != undefined)
+                  window.open(job.job.Job_link, "_blank");
+                else
+                  navigate('/login');
+              }}
             >
               Apply
             </Button>

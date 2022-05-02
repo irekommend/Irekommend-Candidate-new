@@ -42,7 +42,7 @@ const App = () => {
     firebase.auth().onAuthStateChanged(user => {
       setUser(user);
     })
-  }, [])
+  }, [user])
 
   console.log(user);
 
@@ -154,7 +154,7 @@ const App = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/organization" element={<Org />}></Route>
         <Route path="/Signup" element={<Signup />}></Route>
-        <Route path="/search/:jobtitle" element={<JobList />}></Route>
+        <Route path="/search/:jobtitle" element={<JobList user={user}/>}></Route>
         <Route path="*" element={<PNF />}></Route>
         <Route path="/emj" element={<Emj />}></Route>
       </Routes>

@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import React, { useEffect, useRef, useState } from "react";
 import { Nav, Navbar, DropdownButton, Dropdown } from "react-bootstrap";
 import firebase from "../service/firebase.js";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = (props) => {
   const user = props.user;
@@ -71,7 +71,11 @@ const Header = (props) => {
             </Nav.Link>
           </Nav>
           <Nav>
-            {user == undefined ? (
+            {(user == undefined) |
+            (user == null) 
+            // |
+            // (user.displayName == null) 
+            ? (
               <Button variant="contained" href="/login" className="btn">
                 Log in
               </Button>

@@ -65,7 +65,7 @@ export default function SignIn() {
     firebase
       .auth()
       .signInWithPopup(provider)
-      .then((data) => navigate("/"));
+      .then((data) => navigate(-1));
   };
 
   const Login = () => (

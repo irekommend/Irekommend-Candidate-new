@@ -52,7 +52,7 @@ export default function SignUp() {
           var storageRef = firebase.storage().ref("resumes").child(resume.name);
           storageRef.put(resume).then(() => {
             console.log("Uploaded a blob or file!");
-            navigate("/")
+            navigate(-2)
           });
         }
         firestore.collection("usersCollection").add({
