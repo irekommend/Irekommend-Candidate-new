@@ -39,13 +39,13 @@ const Home = () => {
       <img
         src={svg1}
         alt={"logo"}
-        style={{ zIndex: "0", opacity: "0.7" }}
+        style={{ zIndex: "-1", opacity: "0.7" }}
         className="position-absolute top-0 start-0"
       />
       <img
         src={svg2}
         alt={"logo"}
-        style={{ zIndex: "0", opacity: "0.7" }}
+        style={{ zIndex: "-1", opacity: "0.7" }}
         className="position-absolute bottom-0 end-0"
       />
 
@@ -291,7 +291,7 @@ const Home = () => {
           />
         </div>
         <div className="mx-auto my-auto text-center px-5">
-          <Card style={{ width: "25rem" }} className="mx-3 my-3 card-c">
+          <Card style={{ maxWidth: "25rem" }} className="mx-3 my-3 card-c">
             <Card.Body>
               <div
                 className="d-flex justify-content-center icon mb-3"

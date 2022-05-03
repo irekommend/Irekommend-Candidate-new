@@ -511,10 +511,15 @@ body{
   gap: 2rem;
 }
 
+.s-blog-card-header {
+  height: 200px;
+}
+
 .s-blog-card-header>img {
   max-width: 100%;
   display: block;
   object-fit: cover;
+  margin: auto 0;
 }
 
 .s-blog-card {

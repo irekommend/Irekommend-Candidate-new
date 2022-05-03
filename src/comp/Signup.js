@@ -70,7 +70,7 @@ export default function SignUp() {
   };
   const Signup = () => (
     <ThemeProvider theme={theme}>
-      <div className="d-flex h-100">
+      <div className="d-flex h-100 my-3">
         <Container
           component="main"
           maxWidth="xs"
